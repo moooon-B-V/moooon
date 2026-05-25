@@ -1,0 +1,89 @@
+---
+---
+
+<figure class="my-8 not-prose">
+  <svg
+    viewBox="0 0 560 320"
+    class="w-full h-auto"
+    role="img"
+    aria-label="A team workflow in Doooo Hub: a goal goes to the Content Creator team, four agents (Research, Copywriter, Editor, Social Manager) hand off in sequence, producing a published post."
+  >
+    <defs>
+      <marker id="hubArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M0,0 L10,5 L0,10 z" fill="#0a0a0a" />
+      </marker>
+      <marker id="hubArrowBrand" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M0,0 L10,5 L0,10 z" fill="#360eff" />
+      </marker>
+    </defs>
+
+    <!-- Goal -->
+    <rect x="120" y="14" width="320" height="34" rx="6" fill="#ece8ff" stroke="#360eff" stroke-width="1" />
+    <text x="280" y="36" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#0a0a0a">
+      Goal: "Publish a launch post about MLX speedups."
+    </text>
+    <path d="M280 48 L280 74" stroke="#0a0a0a" stroke-width="1.2" fill="none" marker-end="url(#hubArrow)" />
+
+    <!-- Team box -->
+    <rect x="160" y="80" width="240" height="36" rx="6" fill="#0a0a0a" />
+    <text x="280" y="103" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="white" font-weight="600">
+      Content Creator team
+    </text>
+    <text x="410" y="103" font-family="Inter, sans-serif" font-size="9" fill="#6b6862">
+      ← workflow lives inside
+    </text>
+
+    <path d="M280 116 L280 138" stroke="#0a0a0a" stroke-width="1.2" fill="none" marker-end="url(#hubArrow)" />
+
+    <!-- Four agents in sequence -->
+    <g>
+      <rect x="20" y="144" width="110" height="60" rx="6" fill="none" stroke="#0a0a0a" stroke-width="1.2" />
+      <text x="75" y="168" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#0a0a0a" font-weight="600">Research</text>
+      <text x="75" y="184" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6b6862">web search</text>
+      <text x="75" y="196" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6b6862">+ MLX model</text>
+    </g>
+
+    <g>
+      <rect x="160" y="144" width="110" height="60" rx="6" fill="none" stroke="#0a0a0a" stroke-width="1.2" />
+      <text x="215" y="168" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#0a0a0a" font-weight="600">Copywriter</text>
+      <text x="215" y="184" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6b6862">drafts post</text>
+      <text x="215" y="196" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6b6862">via MLX</text>
+    </g>
+
+    <g>
+      <rect x="300" y="144" width="110" height="60" rx="6" fill="none" stroke="#0a0a0a" stroke-width="1.2" />
+      <text x="355" y="168" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#0a0a0a" font-weight="600">Editor</text>
+      <text x="355" y="184" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6b6862">tone +</text>
+      <text x="355" y="196" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6b6862">accuracy</text>
+    </g>
+
+    <g>
+      <rect x="440" y="144" width="110" height="60" rx="6" fill="none" stroke="#0a0a0a" stroke-width="1.2" />
+      <text x="495" y="168" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#0a0a0a" font-weight="600">Social Mgr.</text>
+      <text x="495" y="184" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6b6862">schedules to</text>
+      <text x="495" y="196" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6b6862">X / LI / IG</text>
+    </g>
+
+    <!-- Handoff arrows -->
+    <path d="M130 174 L160 174" stroke="#360eff" stroke-width="1.4" fill="none" marker-end="url(#hubArrowBrand)" />
+    <path d="M270 174 L300 174" stroke="#360eff" stroke-width="1.4" fill="none" marker-end="url(#hubArrowBrand)" />
+    <path d="M410 174 L440 174" stroke="#360eff" stroke-width="1.4" fill="none" marker-end="url(#hubArrowBrand)" />
+
+    <!-- Down to output -->
+    <path d="M75 204 Q75 240 220 240" stroke="#0a0a0a" stroke-width="1" fill="none" />
+    <path d="M215 204 Q215 240 220 240" stroke="#0a0a0a" stroke-width="1" fill="none" />
+    <path d="M355 204 Q355 240 340 240" stroke="#0a0a0a" stroke-width="1" fill="none" />
+    <path d="M495 204 Q495 240 340 240" stroke="#0a0a0a" stroke-width="1" fill="none" />
+    <path d="M280 240 L280 264" stroke="#0a0a0a" stroke-width="1.2" fill="none" marker-end="url(#hubArrow)" />
+
+    <!-- Output -->
+    <rect x="200" y="266" width="160" height="36" rx="6" fill="none" stroke="#0a0a0a" stroke-width="1.2" />
+    <text x="280" y="289" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#0a0a0a" font-weight="600">
+      Published post
+    </text>
+  </svg>
+  <figcaption class="mt-3 text-[12px] text-[var(--color-muted)] leading-[1.5]">
+    <span class="text-[var(--color-ink)]">How a team runs a workflow.</span>
+    Each box is an agent. Arrows are handoffs defined when the team is built. Swap any agent, tool, or step — it's your team.
+  </figcaption>
+</figure>

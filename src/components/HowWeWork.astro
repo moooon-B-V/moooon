@@ -1,0 +1,109 @@
+---
+---
+
+<section id="how" class="border-y border-[var(--color-line)]/10 bg-[var(--color-paper-2)]/60">
+  <div class="mx-auto max-w-6xl px-6 md:px-10 py-20 md:py-32 grid md:grid-cols-12 gap-10 md:gap-16">
+    <div class="md:col-span-5">
+      <p class="text-[12px] uppercase tracking-[0.18em] text-[var(--color-brand)] mb-6">How we work</p>
+      <h2 class="text-[32px] md:text-[44px] leading-[1.05] tracking-[-0.025em] font-medium">
+        moooon is its own first customer.
+      </h2>
+      <div class="mt-8 space-y-5 text-[15px] leading-[1.6] text-[var(--color-muted)]">
+        <p>
+          The way <span class="text-[var(--color-ink)] font-medium">Prodect</span> will work — describe what you want
+          to build, get back a structured Epic → Story → Subtask tree, hand each Subtask to a coding agent
+          (Claude Code, Cursor, Devin, Aider) — is already how Prodect itself is being built.
+        </p>
+        <p>
+          Right now a human plays the planner role by hand; soon Prodect's planner agent will play it automatically.
+          Same workflow, different planner.
+        </p>
+        <p>
+          The same loop builds <span class="text-[var(--color-ink)] font-medium">Doooo App</span>
+          (where tasks live, and the remote for your AI team) and
+          <span class="text-[var(--color-ink)] font-medium">Doooo Hub</span>
+          (where you hire a team of agents — built in, built by you, or bought from the marketplace — and they run a
+          workflow together, fast, on Apple Silicon via MLX).
+        </p>
+      </div>
+    </div>
+    <div class="md:col-span-7 flex items-center">
+      <svg
+        viewBox="0 0 600 380"
+        class="w-full h-auto"
+        role="img"
+        aria-label="The moooon loop: chat goes into Prodect, which produces an Epic Story Subtask tree, routed to coding agents in Doooo Hub or human todos in Doooo App, both of which feed back into Prodect."
+      >
+        <defs>
+          <marker id="arrowDark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#0a0a0a" />
+          </marker>
+          <marker id="arrowBrand" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#360eff" />
+          </marker>
+        </defs>
+
+        <!-- Chat -->
+        <g>
+          <rect x="20" y="160" width="120" height="60" rx="8" fill="none" stroke="#0a0a0a" stroke-width="1.2" />
+          <text x="80" y="186" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#0a0a0a">Chat box</text>
+          <text x="80" y="204" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6b6862">"build X"</text>
+        </g>
+
+        <!-- Prodect -->
+        <g>
+          <rect x="200" y="140" width="180" height="100" rx="8" fill="#360eff" />
+          <text x="290" y="170" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="white" font-weight="600">Prodect</text>
+          <text x="290" y="192" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#ece8ff">Epic → Story →</text>
+          <text x="290" y="208" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#ece8ff">Subtask tree</text>
+          <text x="290" y="226" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#ece8ff" opacity="0.7">(planner: human → agent)</text>
+        </g>
+
+        <!-- Doooo Hub -->
+        <g>
+          <rect x="440" y="60" width="140" height="80" rx="8" fill="none" stroke="#0a0a0a" stroke-width="1.2" />
+          <text x="510" y="86" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#0a0a0a" font-weight="600">Doooo Hub</text>
+          <text x="510" y="106" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6b6862">coding agents +</text>
+          <text x="510" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6b6862">team workflows</text>
+        </g>
+
+        <!-- Doooo App -->
+        <g>
+          <rect x="440" y="240" width="140" height="80" rx="8" fill="none" stroke="#0a0a0a" stroke-width="1.2" />
+          <text x="510" y="266" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#0a0a0a" font-weight="600">Doooo App</text>
+          <text x="510" y="286" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6b6862">human todos +</text>
+          <text x="510" y="300" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6b6862">remote control</text>
+        </g>
+
+        <!-- Arrows -->
+        <path d="M140 190 L200 190" stroke="#0a0a0a" stroke-width="1.2" fill="none" marker-end="url(#arrowDark)" />
+        <path d="M380 175 Q420 175 440 110" stroke="#360eff" stroke-width="1.4" fill="none" marker-end="url(#arrowBrand)" />
+        <path d="M380 205 Q420 205 440 270" stroke="#360eff" stroke-width="1.4" fill="none" marker-end="url(#arrowBrand)" />
+
+        <!-- Feedback loop arrows back to Prodect -->
+        <path
+          d="M510 140 Q510 30 290 30 L290 140"
+          stroke="#0a0a0a"
+          stroke-width="1"
+          stroke-dasharray="3 3"
+          fill="none"
+          marker-end="url(#arrowDark)"
+        />
+        <path
+          d="M510 320 Q510 360 290 360 L290 240"
+          stroke="#0a0a0a"
+          stroke-width="1"
+          stroke-dasharray="3 3"
+          fill="none"
+          marker-end="url(#arrowDark)"
+        />
+
+        <!-- Labels -->
+        <text x="170" y="183" font-family="Inter, sans-serif" font-size="9" fill="#6b6862">intent</text>
+        <text x="395" y="155" font-family="Inter, sans-serif" font-size="9" fill="#360eff">code subtasks</text>
+        <text x="395" y="232" font-family="Inter, sans-serif" font-size="9" fill="#360eff">human subtasks</text>
+        <text x="320" y="22" font-family="Inter, sans-serif" font-size="9" fill="#6b6862" font-style="italic">learnings flow back</text>
+      </svg>
+    </div>
+  </div>
+</section>

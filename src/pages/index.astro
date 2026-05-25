@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import HowWeWork from '../components/HowWeWork.astro';
+import ProductCard from '../components/ProductCard.astro';
+import DoooooGlyph from '../components/DoooooGlyph.astro';
+import TeamWorkflowDiagram from '../components/TeamWorkflowDiagram.astro';
+import ProdectWorkflowDiagram from '../components/ProdectWorkflowDiagram.astro';
+import Footer from '../components/Footer.astro';
+
+export const prerender = true;
+---
+
+<Layout>
+  <Nav />
+  <Hero />
+  <HowWeWork />
+
+  <section id="products" class="mx-auto max-w-6xl px-6 md:px-10 pt-24 pb-12">
+    <p class="text-[12px] uppercase tracking-[0.18em] text-[var(--color-muted)] mb-6 flex items-center gap-3">
+      <span class="inline-block h-px w-8 bg-[var(--color-ink)]/30"></span>
+      Three products
+    </p>
+    <h2 class="text-[32px] md:text-[44px] leading-[1.05] tracking-[-0.025em] font-medium max-w-xl">
+      The tasks. The team that runs them. The plan that ties it together.
+    </h2>
+  </section>
+
+  <div class="mx-auto max-w-6xl px-6 md:px-10">
+    <ProductCard
+      product="doooo-app"
+      index="01"
+      name="Doooo App"
+      tagline="Tasks, the way you actually plan them. And the remote for your AI team."
+    >
+      <div class="flex items-center gap-3 mb-6 -mt-2">
+        <DoooooGlyph class="text-[var(--color-brand)]" size={28} />
+        <span class="text-[11px] uppercase tracking-[0.18em] text-[var(--color-muted)]">iOS · Android · Web</span>
+      </div>
+      <p>
+        A task manager that listens. Speak your todos, see your week, share lists with the people in your life.
+        Mobile-first, syncs everywhere.
+      </p>
+      <p>
+        Doooo App is also the <strong>remote control for Doooo Hub</strong>: assign work to one of your AI
+        agents from your phone, watch the job run on your desktop, ship from the couch. Same surface, two kinds of
+        teammate — the humans you actually know, and the agents you hired.
+      </p>
+      <p>
+        Built using the Prodect workflow. The same surface where Prodect's human Subtasks land — clear, scoped, ready
+        to do.
+      </p>
+    </ProductCard>
+
+    <ProductCard
+      product="doooo-hub"
+      index="02"
+      name="Doooo Hub"
+      tagline="Hire a team. Or build your own. Or sell it."
+    >
+      <div class="flex items-center gap-3 mb-6 -mt-2">
+        <DoooooGlyph class="text-[var(--color-brand)]" size={28} />
+        <span class="text-[11px] uppercase tracking-[0.18em] text-[var(--color-muted)]">macOS · Apple Silicon · MLX</span>
+      </div>
+      <p>
+        Doooo Hub isn't one assistant — it's a <strong>team of agents running a workflow together</strong>. Start
+        with a built-in team from Doooo: <strong>Content Creator</strong> ships with a researcher, a copywriter, an
+        editor, a social-media manager and four others, already wired to hand off to each other end-to-end. Brand
+        Designer, Product Designer, and E-commerce Seller teams work the same way.
+      </p>
+      <p>
+        Or build your own team from scratch — design your own agents, pick their tools, write the workflow that
+        connects them (the workflow is part of the team). When it's good, <strong>publish it to the marketplace</strong>
+        and let other people hire your team for their work.
+      </p>
+
+      <TeamWorkflowDiagram />
+
+      <p>
+        On macOS, Doooo Hub runs local models through <strong>Apple's MLX framework</strong> — the unified-memory,
+        Apple-Silicon-native runtime that makes 7-70B-parameter models genuinely fast on a MacBook, no GPU rental
+        required. Cloud LLMs work too, but the headline is on-device: your code, your keys, your repo, your hardware.
+      </p>
+      <p class="text-[var(--color-muted)] text-[14px]">
+        Driven by Doooo App. Planned by Prodect.
+      </p>
+    </ProductCard>
+
+    <ProductCard
+      product="prodect"
+      index="03"
+      name="Prodect"
+      tagline="Building itself, the way it'll build yours."
+    >
+      <div class="flex items-center gap-3 mb-6 -mt-2">
+        <span class="font-mono text-[var(--color-brand)] font-semibold text-[16px]">{`{ }`}</span>
+        <span class="text-[11px] uppercase tracking-[0.18em] text-[var(--color-muted)]">Open core · GPL-3.0 + hosted brain</span>
+      </div>
+      <p>
+        Open-source Jira, with planning intelligence built in. Describe what you want to build; Prodect produces an
+        <strong>Epic → Story → Subtask tree</strong>, routes each Subtask to the right executor — coding agent or
+        human — and hands the coding ones a rich prompt your agent (Claude Code, Cursor, Devin, Aider) can execute
+        end-to-end.
+      </p>
+      <p>
+        The product isn't shipped yet. But the <em>workflow</em> is — and we're using it right now to build Prodect
+        itself, plus Doooo App and Doooo Hub. Today a human plays the planner role by hand; soon Prodect's planner
+        agent will play it automatically. Same workflow, different planner.
+      </p>
+
+      <ProdectWorkflowDiagram />
+
+      <p>
+        <strong>prodect-core</strong> is GPL-3.0 open-source — Work Items, Stories, dependency graphs, multi-tenant
+        workspaces, the tree-view UI, GitHub integration. The planning brain (<strong>prodect-ai</strong>) ships as
+        a hosted service. Browsers only ever talk to prodect-core; the AI layer is server-to-server. Same playbook
+        GitLab, Sentry, Plane, and Mattermost use.
+      </p>
+    </ProductCard>
+  </div>
+
+  <section class="mx-auto max-w-6xl px-6 md:px-10 mt-24 pt-20 pb-8 border-t border-[var(--color-line)]/15">
+    <p class="text-[12px] uppercase tracking-[0.18em] text-[var(--color-muted)] mb-8 flex items-center gap-3">
+      <span class="inline-block h-px w-8 bg-[var(--color-ink)]/30"></span>
+      Manifesto
+    </p>
+    <div class="grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-7 md:col-start-2">
+        <p class="text-[22px] md:text-[28px] leading-[1.4] tracking-[-0.015em] text-[var(--color-ink)]">
+          moooon is a small studio in a quiet corner of the internet. We build tools we wished existed, ship them when
+          they're ready, and keep them simple enough that one person can hold the whole thing in their head.
+        </p>
+        <p class="mt-6 text-[16px] leading-[1.65] text-[var(--color-muted)]">
+          The loop above isn't a marketing diagram — it's literally how this site, Doooo App, Doooo Hub, and Prodect
+          itself get built. No funding rounds, no growth-hacking, no roadmap theatre. Just three products and the work
+          to make them good.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

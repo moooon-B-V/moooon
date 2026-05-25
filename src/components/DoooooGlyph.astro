@@ -1,0 +1,31 @@
+---
+interface Props {
+  class?: string;
+  size?: number;
+}
+const { class: className = '', size = 28 } = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1025 1025"
+  width={size}
+  height={size}
+  class={className}
+  aria-hidden="true"
+>
+  <defs>
+    <clipPath id="doooo-eye-cutout">
+      <path d="M 0 0 H 1025 V 1025 H 0 Z M 768.5 512.5 a 128 128 0 1 0 0.001 0 Z" clip-rule="evenodd" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#doooo-eye-cutout)">
+    <ellipse cx="128.5" cy="128.5" rx="128" ry="128" fill="currentColor" />
+    <ellipse cx="128.5" cy="384.5" rx="128" ry="128" fill="currentColor" />
+    <ellipse cx="128.5" cy="640.5" rx="128" ry="128" fill="currentColor" />
+    <ellipse cx="128.5" cy="896.5" rx="128" ry="128" fill="currentColor" />
+    <path d="M 128.5 0.5 Q 1024.5 0.5 1024.5 512.5 Q 1024.5 1024.5 128.5 1024.5 Z" fill="currentColor" />
+  </g>
+  <ellipse cx="768.5" cy="640.5" rx="32" ry="32" fill="currentColor" />
+  <ellipse cx="768.5" cy="736.5" rx="40" ry="64" fill="currentColor" />
+</svg>
