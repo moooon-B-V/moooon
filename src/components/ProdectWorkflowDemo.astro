@@ -26,11 +26,11 @@
       </div>
 
       <!-- Stage with two acts -->
-      <div class="relative h-[420px]">
+      <div class="relative h-[620px] md:h-[420px]">
         <!-- ============ ACT 1: Pre-plan ============ -->
-        <div class="absolute inset-0 act act-pre p-5 grid grid-cols-12 gap-4">
-          <!-- Left: chat -->
-          <div class="col-span-7 flex flex-col">
+        <div class="absolute inset-0 act act-pre p-4 md:p-5 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 overflow-y-auto">
+          <!-- Chat (full width on mobile, 7/12 on desktop) -->
+          <div class="md:col-span-7 flex flex-col min-h-0">
             <div class="text-[10px] uppercase tracking-[0.18em] text-[var(--color-muted)] mb-3">
               Tell Prodect what you want to build
             </div>
@@ -49,8 +49,8 @@
               </div>
             </div>
           </div>
-          <!-- Right: docs being written -->
-          <div class="col-span-5 flex flex-col gap-2">
+          <!-- Living docs (full width on mobile, 5/12 on desktop) -->
+          <div class="md:col-span-5 flex flex-col gap-2 min-h-0">
             <div class="text-[10px] uppercase tracking-[0.18em] text-[var(--color-muted)] mb-1">Living docs</div>
             <div class="doc-card doc-1 rounded-lg border border-black/5 bg-white px-3 py-2 flex items-center gap-2 text-[11px]">
               <span class="text-[var(--color-brand)] font-mono">md</span>
@@ -74,9 +74,9 @@
         </div>
 
         <!-- ============ ACT 2: Build phase ============ -->
-        <div class="absolute inset-0 act act-build p-5 grid grid-cols-12 gap-4">
-          <!-- Left: tree -->
-          <div class="col-span-7 flex flex-col overflow-hidden">
+        <div class="absolute inset-0 act act-build p-4 md:p-5 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 overflow-y-auto">
+          <!-- Tree (full width on mobile, 7/12 on desktop) -->
+          <div class="md:col-span-7 flex flex-col min-h-0">
             <div class="text-[10px] uppercase tracking-[0.18em] text-[var(--color-muted)] mb-3">
               Epic → Story → Subtask
             </div>
@@ -119,8 +119,8 @@
             </div>
           </div>
 
-          <!-- Right: subtask peels off into coding agent -->
-          <div class="col-span-5 flex flex-col gap-3 overflow-hidden">
+          <!-- Subtask + executor (full width on mobile, 5/12 on desktop) -->
+          <div class="md:col-span-5 flex flex-col gap-3 min-h-0">
             <div class="text-[10px] uppercase tracking-[0.18em] text-[var(--color-muted)]">Executor</div>
             <div class="subtask-card rounded-lg border border-[var(--color-brand)]/25 bg-white px-3 py-2.5 shadow-[0_4px_16px_-6px_rgba(54,14,255,0.25)]">
               <div class="text-[10px] uppercase tracking-[0.14em] text-[var(--color-brand)] font-semibold">Subtask 1.1.1</div>
