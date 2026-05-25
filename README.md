@@ -1,6 +1,6 @@
-# moooon
+# MOOOON
 
-The marketing site for [moooon.net](https://moooon.net) — a small studio building three products: **Doooo App**, **Doooo Hub**, and **Prodect**.
+The marketing site for [moooon.net](https://moooon.net) — three products: **Doooo App**, **Doooo Hub**, and **Prodect**.
 
 ## Stack
 
@@ -45,8 +45,13 @@ src/
 
 ## Deploy
 
-Auto-deploys on push to `main` via Vercel's GitHub integration. To deploy manually:
+This repo is private + owned by an organization, which Vercel's Hobby plan doesn't auto-deploy. Deploys are manual:
 
 ```sh
-vercel deploy --prod
+vercel deploy            # preview URL
+vercel deploy --prod     # promote to moooon.net
 ```
+
+The CLI is already linked (`.vercel/project.json` points at `zhuyue11s-projects/moooon`). First-time setup on a new machine: `npm i -g vercel`, then `vercel link --project moooon`.
+
+If we upgrade to Pro later — or make the repo public — `vercel git connect git@github.com:moooon-B-V/moooon.git` will switch on push-to-deploy.

@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = 'moooon — three products, one small team',
-  description = 'moooon builds Doooo App, Doooo Hub, and Prodect. We use the workflow Prodect codifies to build all three.',
+  title = "MOOOON — three products, built by the tool we're building",
+  description = 'MOOOON builds Doooo App, Doooo Hub, and Prodect. We use the workflow Prodect codifies to build all three.',
 } = Astro.props;
 ---
 
@@ -27,6 +27,12 @@ const {
     <meta property="og:url" content="https://moooon.net" />
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap"
+    />
   </head>
   <body class="bg-[var(--color-paper)] text-[var(--color-ink)] font-sans">
     <slot />
