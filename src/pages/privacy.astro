@@ -85,12 +85,31 @@ const policyUrl = 'https://www.iubenda.com/privacy-policy/73390507';
     text-underline-offset: 2px;
   }
   .iubenda-policy ul, .iubenda-policy ol {
-    padding-left: 1.5rem;
+    padding-left: 0 !important;
     margin: 0.75rem 0;
+    list-style: none !important;
   }
   .iubenda-policy li {
     font-size: 16px;
     line-height: 1.6;
     margin: 0.4rem 0;
+    list-style: none !important;
+    list-style-type: none !important;
+    list-style-image: none !important;
+  }
+  /* iubenda renders the ▶/▼ expander glyph as a ::marker on list items.
+     Without iubenda's JS bound (iub-no-markup), those markers are dead.
+     Hide them so the list reads as a clean summary. */
+  .iubenda-policy li::marker,
+  .iubenda-policy ::marker {
+    content: "" !important;
+    color: transparent !important;
+    font-size: 0 !important;
+  }
+  /* Hide iubenda's third-party service icons. In iub-no-markup mode they fall
+     back to a generic puzzle-piece icon because the proper icon styles aren't
+     loaded — text labels alone carry the meaning. */
+  .iubenda-policy figure {
+    display: none !important;
   }
 </style>
