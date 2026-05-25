@@ -1,0 +1,136 @@
+---
+import BrandDoooo from './BrandDoooo.astro';
+---
+
+<figure class="not-prose my-8">
+  <div
+    class="relative overflow-hidden rounded-2xl border border-[var(--color-line)]/15 bg-gradient-to-br from-[#0a0a0a] via-[#171528] to-[#1a0f2e] p-5 md:p-7 shadow-[0_30px_70px_-30px_rgba(54,14,255,0.4)]"
+  >
+    <!-- Desktop-window-style mockup -->
+    <div class="rounded-xl border border-white/10 bg-black/40 backdrop-blur-sm overflow-hidden">
+      <!-- Title bar -->
+      <div class="flex items-center gap-2 px-4 py-2.5 border-b border-white/10 bg-black/40">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></span>
+        <span class="ml-3 text-[11px] text-white/40 font-mono">doooo-hub · Content Creator team</span>
+        <span class="ml-auto text-[10px] text-white/40">MLX · M2 Max · 14B Qwen</span>
+      </div>
+
+      <!-- Goal -->
+      <div class="px-5 py-3 border-b border-white/10 bg-white/[0.02]">
+        <span class="text-[10px] uppercase tracking-[0.18em] text-white/40">Goal</span>
+        <div class="text-[13px] text-white/90 mt-0.5">
+          Publish a launch post about MLX speedups across X, LinkedIn, Threads.
+        </div>
+      </div>
+
+      <!-- Agents grid -->
+      <div class="grid grid-cols-4 gap-px bg-white/5">
+        <div class="agent-card agent-card-1 bg-black/40 px-3 py-4 flex flex-col items-center gap-2 relative">
+          <div class="agent-dot agent-dot-1 w-2 h-2 rounded-full bg-emerald-400"></div>
+          <div class="text-[11px] font-semibold text-white/90">Researcher</div>
+          <div class="text-[10px] text-white/40 text-center leading-tight">web search<br/>+ MLX</div>
+          <div class="agent-output agent-output-1 absolute -bottom-1 left-2 right-2 h-0.5 bg-emerald-400/60 rounded-full"></div>
+        </div>
+        <div class="agent-card agent-card-2 bg-black/40 px-3 py-4 flex flex-col items-center gap-2 relative">
+          <div class="agent-dot agent-dot-2 w-2 h-2 rounded-full bg-white/15"></div>
+          <div class="text-[11px] font-semibold text-white/90">Copywriter</div>
+          <div class="text-[10px] text-white/40 text-center leading-tight">draft post<br/>via MLX</div>
+          <div class="agent-output agent-output-2 absolute -bottom-1 left-2 right-2 h-0.5 bg-emerald-400/60 rounded-full"></div>
+        </div>
+        <div class="agent-card agent-card-3 bg-black/40 px-3 py-4 flex flex-col items-center gap-2 relative">
+          <div class="agent-dot agent-dot-3 w-2 h-2 rounded-full bg-white/15"></div>
+          <div class="text-[11px] font-semibold text-white/90">Editor</div>
+          <div class="text-[10px] text-white/40 text-center leading-tight">tone +<br/>accuracy</div>
+          <div class="agent-output agent-output-3 absolute -bottom-1 left-2 right-2 h-0.5 bg-emerald-400/60 rounded-full"></div>
+        </div>
+        <div class="agent-card agent-card-4 bg-black/40 px-3 py-4 flex flex-col items-center gap-2 relative">
+          <div class="agent-dot agent-dot-4 w-2 h-2 rounded-full bg-white/15"></div>
+          <div class="text-[11px] font-semibold text-white/90">Social Mgr</div>
+          <div class="text-[10px] text-white/40 text-center leading-tight">schedule to<br/>X · LI · Threads</div>
+          <div class="agent-output agent-output-4 absolute -bottom-1 left-2 right-2 h-0.5 bg-emerald-400/60 rounded-full"></div>
+        </div>
+      </div>
+
+      <!-- Activity log -->
+      <div class="px-5 py-4 bg-black/40 border-t border-white/10 min-h-[140px] font-mono text-[11px] text-white/60 space-y-1">
+        <div class="log-line log-1">
+          <span class="text-emerald-400">→</span> Researcher · pulled 5 MLX benchmark sources
+        </div>
+        <div class="log-line log-2">
+          <span class="text-emerald-400">→</span> Copywriter · drafted 280-char post, 1200-char article
+        </div>
+        <div class="log-line log-3">
+          <span class="text-emerald-400">→</span> Editor · tone pass, fact-check passed
+        </div>
+        <div class="log-line log-4">
+          <span class="text-emerald-400">→</span> Social Mgr · scheduled to X 9am, LI 10am, Threads 11am
+        </div>
+        <div class="log-line log-5 text-white/90">
+          <span class="text-emerald-400">✓</span> Workflow complete · all on-device · 41s total
+        </div>
+      </div>
+    </div>
+
+    <figcaption class="mt-5 text-center text-[12px] text-white/60 leading-[1.5]">
+      <span class="text-white font-medium">A team of agents, one workflow.</span>
+      Hub runs them locally with MLX on your Mac. Pick a team from <BrandDoooo />, build your own, or hire one from the marketplace.
+    </figcaption>
+  </div>
+
+  <style>
+    .agent-dot {
+      animation: dot-active 16s ease-in-out infinite;
+    }
+    .agent-dot-1 { animation-delay: 0s; }
+    .agent-dot-2 { animation-delay: 3.5s; }
+    .agent-dot-3 { animation-delay: 7s; }
+    .agent-dot-4 { animation-delay: 10.5s; }
+
+    @keyframes dot-active {
+      0%, 1.5%   { background-color: rgba(255,255,255,0.15); box-shadow: none; }
+      2%, 20%    { background-color: rgb(52, 211, 153); box-shadow: 0 0 10px rgba(52, 211, 153, 0.7); }
+      21%, 100%  { background-color: rgba(52, 211, 153, 0.5); box-shadow: none; }
+    }
+
+    .agent-output {
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: output-fill 16s ease-out infinite;
+    }
+    .agent-output-1 { animation-delay: 0s; }
+    .agent-output-2 { animation-delay: 3.5s; }
+    .agent-output-3 { animation-delay: 7s; }
+    .agent-output-4 { animation-delay: 10.5s; }
+
+    @keyframes output-fill {
+      0%, 2%    { transform: scaleX(0); }
+      18%, 100% { transform: scaleX(1); }
+    }
+
+    .log-line {
+      opacity: 0;
+      transform: translateY(4px);
+      animation: log-in 16s ease-out infinite;
+    }
+    .log-1 { animation-delay: 1.8s; }
+    .log-2 { animation-delay: 5.3s; }
+    .log-3 { animation-delay: 8.8s; }
+    .log-4 { animation-delay: 12.3s; }
+    .log-5 { animation-delay: 14s; }
+
+    @keyframes log-in {
+      0%, 0.5%   { opacity: 0; transform: translateY(4px); }
+      2%, 88%    { opacity: 1; transform: translateY(0); }
+      94%, 100%  { opacity: 0; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .agent-dot, .agent-output, .log-line { animation: none !important; }
+      .agent-dot { background-color: rgb(52, 211, 153) !important; }
+      .agent-output { transform: scaleX(1); }
+      .log-line { opacity: 1; transform: none; }
+    }
+  </style>
+</figure>

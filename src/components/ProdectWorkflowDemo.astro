@@ -1,0 +1,297 @@
+---
+---
+
+<figure class="not-prose my-8">
+  <div
+    class="relative overflow-hidden rounded-2xl border border-[var(--color-line)]/15 bg-gradient-to-br from-[#eef1ff] via-[#f5f0ff] to-[#ffeef5] p-5 md:p-7 shadow-[0_2px_8px_-2px_rgba(10,10,10,0.05),0_24px_60px_-32px_rgba(54,14,255,0.22)]"
+  >
+    <!-- App-window-style mockup -->
+    <div class="rounded-xl border border-black/10 bg-white overflow-hidden shadow-[0_30px_60px_-30px_rgba(10,10,10,0.18)]">
+      <!-- Title bar -->
+      <div class="flex items-center gap-2 px-4 py-2.5 border-b border-black/5 bg-[var(--color-paper-2)]">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></span>
+        <span class="ml-3 text-[11px] font-mono text-[var(--color-muted)]">prodect · my-side-project</span>
+        <span class="ml-auto flex items-center gap-2 text-[10px] text-[var(--color-muted)]">
+          <span class="phase-pill phase-pill-pre inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[var(--color-brand)]/10 text-[var(--color-brand)] font-semibold">
+            <span class="w-1 h-1 rounded-full bg-[var(--color-brand)]"></span>
+            Pre-plan phase
+          </span>
+          <span class="phase-pill phase-pill-build inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 font-semibold">
+            <span class="w-1 h-1 rounded-full bg-emerald-500"></span>
+            Build phase
+          </span>
+        </span>
+      </div>
+
+      <!-- Stage with two acts -->
+      <div class="relative h-[420px]">
+        <!-- ============ ACT 1: Pre-plan ============ -->
+        <div class="absolute inset-0 act act-pre p-5 grid grid-cols-12 gap-4">
+          <!-- Left: chat -->
+          <div class="col-span-7 flex flex-col">
+            <div class="text-[10px] uppercase tracking-[0.18em] text-[var(--color-muted)] mb-3">
+              Tell Prodect what you want to build
+            </div>
+            <div class="flex-1 space-y-2.5 overflow-hidden">
+              <div class="prechat prechat-1 max-w-[85%] rounded-2xl rounded-tl-md bg-[var(--color-paper-2)] px-3.5 py-2 text-[12px] leading-relaxed">
+                I want to build a Notion-like notes app, mobile-first, with end-to-end encryption.
+              </div>
+              <div class="prechat prechat-2 max-w-[85%] ml-auto rounded-2xl rounded-tr-md bg-[var(--color-brand)]/8 border border-[var(--color-brand)]/15 px-3.5 py-2 text-[12px] leading-relaxed">
+                Good. A few clarifiers first — solo or with collaborators? Web app too? Want me to suggest a tech stack?
+              </div>
+              <div class="prechat prechat-3 max-w-[85%] rounded-2xl rounded-tl-md bg-[var(--color-paper-2)] px-3.5 py-2 text-[12px] leading-relaxed">
+                Solo for v1. iOS first. Surprise me with the stack.
+              </div>
+              <div class="prechat prechat-4 max-w-[85%] ml-auto rounded-2xl rounded-tr-md bg-[var(--color-brand)]/8 border border-[var(--color-brand)]/15 px-3.5 py-2 text-[12px] leading-relaxed">
+                Updated <em>vision.md</em>, <em>stack.md</em>, <em>workflow.md</em>. Ready when you are.
+              </div>
+            </div>
+          </div>
+          <!-- Right: docs being written -->
+          <div class="col-span-5 flex flex-col gap-2">
+            <div class="text-[10px] uppercase tracking-[0.18em] text-[var(--color-muted)] mb-1">Living docs</div>
+            <div class="doc-card doc-1 rounded-lg border border-black/5 bg-white px-3 py-2 flex items-center gap-2 text-[11px]">
+              <span class="text-[var(--color-brand)] font-mono">md</span>
+              <span class="font-semibold">vision.md</span>
+              <span class="ml-auto text-[10px] text-[var(--color-muted)]">just now</span>
+            </div>
+            <div class="doc-card doc-2 rounded-lg border border-black/5 bg-white px-3 py-2 flex items-center gap-2 text-[11px]">
+              <span class="text-[var(--color-brand)] font-mono">md</span>
+              <span class="font-semibold">stack.md</span>
+              <span class="ml-auto text-[10px] text-[var(--color-muted)]">just now</span>
+            </div>
+            <div class="doc-card doc-3 rounded-lg border border-black/5 bg-white px-3 py-2 flex items-center gap-2 text-[11px]">
+              <span class="text-[var(--color-brand)] font-mono">md</span>
+              <span class="font-semibold">workflow.md</span>
+              <span class="ml-auto text-[10px] text-[var(--color-muted)]">just now</span>
+            </div>
+            <div class="iteration-hint mt-2 text-[10px] text-[var(--color-muted)] italic leading-snug">
+              ↻ iteration loop: docs update as you and Prodect refine the idea.
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ ACT 2: Build phase ============ -->
+        <div class="absolute inset-0 act act-build p-5 grid grid-cols-12 gap-4">
+          <!-- Left: tree -->
+          <div class="col-span-7 flex flex-col overflow-hidden">
+            <div class="text-[10px] uppercase tracking-[0.18em] text-[var(--color-muted)] mb-3">
+              Epic → Story → Subtask
+            </div>
+            <div class="flex-1 space-y-1 overflow-hidden font-mono text-[11px] leading-tight">
+              <div class="tree-row tree-1 flex items-center gap-2 px-2 py-1 rounded">
+                <span class="text-[var(--color-brand)]">▼</span>
+                <span class="font-semibold text-[var(--color-ink)]">Epic 1 · Auth & sync</span>
+              </div>
+              <div class="tree-row tree-2 ml-4 flex items-center gap-2 px-2 py-1 rounded">
+                <span class="text-[var(--color-muted)]">▼</span>
+                <span class="text-[var(--color-ink)]/80">Story 1.1 · iCloud account scaffold</span>
+              </div>
+              <div class="tree-row tree-3 ml-8 flex items-center gap-2 px-2 py-1 rounded text-[var(--color-muted)]">
+                <span>•</span>
+                <span>1.1.1  Set up Apple sign-in</span>
+                <span class="ml-auto text-[9px]">code · 12m</span>
+              </div>
+              <div class="tree-row tree-4 ml-8 flex items-center gap-2 px-2 py-1 rounded text-[var(--color-muted)]">
+                <span>•</span>
+                <span>1.1.2  CloudKit container provisioning</span>
+                <span class="ml-auto text-[9px]">code · 18m</span>
+              </div>
+              <div class="tree-row tree-5 ml-8 flex items-center gap-2 px-2 py-1 rounded text-[var(--color-muted)]">
+                <span>•</span>
+                <span>1.1.3  Privacy policy draft</span>
+                <span class="ml-auto text-[9px]">legal · 30m</span>
+              </div>
+              <div class="tree-row tree-6 ml-4 flex items-center gap-2 px-2 py-1 rounded text-[var(--color-muted)]">
+                <span>▸</span>
+                <span>Story 1.2 · E2EE handshake</span>
+              </div>
+              <div class="tree-row tree-7 flex items-center gap-2 px-2 py-1 rounded text-[var(--color-muted)]/70 italic">
+                <span>▸</span>
+                <span>Epic 2 · Notes editor</span>
+              </div>
+              <div class="tree-row tree-8 flex items-center gap-2 px-2 py-1 rounded text-[var(--color-muted)]/70 italic">
+                <span>▸</span>
+                <span>Epic 3 · Search</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: subtask peels off into coding agent -->
+          <div class="col-span-5 flex flex-col gap-3 overflow-hidden">
+            <div class="text-[10px] uppercase tracking-[0.18em] text-[var(--color-muted)]">Executor</div>
+            <div class="subtask-card rounded-lg border border-[var(--color-brand)]/25 bg-white px-3 py-2.5 shadow-[0_4px_16px_-6px_rgba(54,14,255,0.25)]">
+              <div class="text-[10px] uppercase tracking-[0.14em] text-[var(--color-brand)] font-semibold">Subtask 1.1.1</div>
+              <div class="text-[12px] font-semibold mt-0.5">Set up Apple sign-in</div>
+              <div class="text-[10px] text-[var(--color-muted)] mt-0.5">→ Claude Code</div>
+            </div>
+            <div class="agent-terminal rounded-lg bg-[#0a0a0a] text-emerald-300 px-3 py-2.5 font-mono text-[10px] leading-relaxed overflow-hidden flex-1 min-h-0">
+              <div class="terminal-line term-1">$ git checkout -b 1.1.1-apple-signin</div>
+              <div class="terminal-line term-2">  <span class="text-white/50">Added AuthenticationServices entitlement</span></div>
+              <div class="terminal-line term-3">  <span class="text-white/50">Wrote SignInWithAppleButton view</span></div>
+              <div class="terminal-line term-4">  <span class="text-white/50">Wrote AuthService.handleAuthorization</span></div>
+              <div class="terminal-line term-5">  <span class="text-white/50">Test passing: signs in, persists token</span></div>
+              <div class="terminal-line term-6 text-emerald-400">✓ PR #12 opened</div>
+            </div>
+            <div class="pr-merge rounded-md bg-emerald-50 border border-emerald-200 px-3 py-2 text-[11px] text-emerald-900">
+              <span class="font-semibold">Subtask 1.1.1 done.</span>
+              <span class="text-emerald-700">Pick next →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <figcaption class="mt-5 text-center text-[12px] text-[var(--color-muted)] leading-[1.5]">
+      <span class="text-[var(--color-ink)] font-medium">Two phases, one loop.</span>
+      Chat with Prodect to shape the idea. When you're ready, it produces the tree and hands Subtasks to your coding agent one at a time.
+    </figcaption>
+  </div>
+
+  <style>
+    /* 24s total loop · 12s pre-plan · 12s build */
+    .act {
+      opacity: 0;
+      animation: act-cycle 24s ease-in-out infinite;
+    }
+    .act-pre   { animation-delay: 0s; }
+    .act-build { animation-delay: 12s; }
+    @keyframes act-cycle {
+      0%, 2%   { opacity: 0; transform: translateY(6px); }
+      4%, 46%  { opacity: 1; transform: translateY(0); }
+      48%, 100%{ opacity: 0; transform: translateY(-6px); }
+    }
+
+    .phase-pill {
+      opacity: 0.3;
+      animation: phase-glow 24s ease-in-out infinite;
+    }
+    .phase-pill-pre   { animation-delay: 0s; }
+    .phase-pill-build { animation-delay: 12s; }
+    @keyframes phase-glow {
+      0%, 2%   { opacity: 0.3; }
+      4%, 46%  { opacity: 1; }
+      48%, 100%{ opacity: 0.3; }
+    }
+
+    /* Pre-plan chat bubbles stagger in */
+    .prechat {
+      opacity: 0;
+      transform: translateY(6px);
+      animation: chat-in 24s ease-out infinite;
+    }
+    .prechat-1 { animation-delay: 0.4s; }
+    .prechat-2 { animation-delay: 1.6s; }
+    .prechat-3 { animation-delay: 3.0s; }
+    .prechat-4 { animation-delay: 4.4s; }
+    @keyframes chat-in {
+      0%, 1%   { opacity: 0; transform: translateY(6px); }
+      3%, 46%  { opacity: 1; transform: translateY(0); }
+      48%, 100%{ opacity: 0; transform: translateY(-4px); }
+    }
+
+    .doc-card {
+      opacity: 0;
+      transform: translateX(8px);
+      animation: doc-in 24s ease-out infinite;
+    }
+    .doc-1 { animation-delay: 1.8s; }
+    .doc-2 { animation-delay: 3.2s; }
+    .doc-3 { animation-delay: 4.6s; }
+    @keyframes doc-in {
+      0%, 1%   { opacity: 0; transform: translateX(8px); }
+      3%, 46%  { opacity: 1; transform: translateX(0); }
+      48%, 100%{ opacity: 0; transform: translateX(-4px); }
+    }
+
+    .iteration-hint {
+      opacity: 0;
+      animation: hint-in 24s linear infinite;
+    }
+    @keyframes hint-in {
+      0%, 22%  { opacity: 0; }
+      26%, 46% { opacity: 1; }
+      48%, 100%{ opacity: 0; }
+    }
+
+    /* Build phase: tree rows stagger */
+    .tree-row {
+      opacity: 0;
+      transform: translateX(-6px);
+      animation: tree-in 24s ease-out infinite;
+    }
+    .tree-1 { animation-delay: 12.3s; }
+    .tree-2 { animation-delay: 12.5s; }
+    .tree-3 { animation-delay: 12.7s; }
+    .tree-4 { animation-delay: 12.9s; }
+    .tree-5 { animation-delay: 13.1s; }
+    .tree-6 { animation-delay: 13.3s; }
+    .tree-7 { animation-delay: 13.5s; }
+    .tree-8 { animation-delay: 13.7s; }
+    @keyframes tree-in {
+      0%, 50%  { opacity: 0; transform: translateX(-6px); }
+      53%, 95% { opacity: 1; transform: translateX(0); }
+      97%, 100%{ opacity: 0; transform: translateX(-4px); }
+    }
+    .tree-3 { animation-name: tree-in-highlight; }
+    @keyframes tree-in-highlight {
+      0%, 50%  { opacity: 0; transform: translateX(-6px); background: transparent; }
+      53%, 60% { opacity: 1; transform: translateX(0); background: rgba(54, 14, 255, 0.10); }
+      62%, 95% { opacity: 0.5; transform: translateX(0); background: transparent; }
+      97%, 100%{ opacity: 0; }
+    }
+
+    .subtask-card {
+      opacity: 0;
+      transform: scale(0.95);
+      animation: card-pop 24s ease-out infinite;
+      animation-delay: 14.6s;
+    }
+    @keyframes card-pop {
+      0%, 60%  { opacity: 0; transform: scale(0.92) translateY(8px); }
+      62%, 95% { opacity: 1; transform: scale(1) translateY(0); }
+      97%, 100%{ opacity: 0; }
+    }
+
+    .terminal-line {
+      opacity: 0;
+      animation: term-in 24s linear infinite;
+    }
+    .term-1 { animation-delay: 15.3s; }
+    .term-2 { animation-delay: 16.0s; }
+    .term-3 { animation-delay: 16.7s; }
+    .term-4 { animation-delay: 17.4s; }
+    .term-5 { animation-delay: 18.1s; }
+    .term-6 { animation-delay: 18.9s; }
+    @keyframes term-in {
+      0%, 63%  { opacity: 0; }
+      65%, 95% { opacity: 1; }
+      97%, 100%{ opacity: 0; }
+    }
+
+    .pr-merge {
+      opacity: 0;
+      transform: scale(0.95);
+      animation: pr-in 24s ease-out infinite;
+      animation-delay: 19.6s;
+    }
+    @keyframes pr-in {
+      0%, 80%  { opacity: 0; transform: scale(0.95); }
+      82%, 95% { opacity: 1; transform: scale(1); }
+      97%, 100%{ opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .act, .phase-pill, .prechat, .doc-card, .iteration-hint,
+      .tree-row, .subtask-card, .terminal-line, .pr-merge {
+        animation: none !important;
+      }
+      .act-build { opacity: 1; }
+      .act-pre { opacity: 0; pointer-events: none; }
+      .phase-pill-build { opacity: 1; }
+      .tree-row, .subtask-card, .terminal-line, .pr-merge { opacity: 1; transform: none; }
+    }
+  </style>
+</figure>
