@@ -45,13 +45,17 @@ src/
 
 ## Deploy
 
-This repo is private + owned by an organization, which Vercel's Hobby plan doesn't auto-deploy. Deploys are manual:
+Auto-deploys on push to `main` via Vercel's GitHub integration. Pushes to other branches get unique preview URLs.
+
+Manual deploy from a local machine still works:
 
 ```sh
 vercel deploy            # preview URL
 vercel deploy --prod     # promote to moooon.net
 ```
 
-The CLI is already linked (`.vercel/project.json` points at `zhuyue11s-projects/moooon`). First-time setup on a new machine: `npm i -g vercel`, then `vercel link --project moooon`.
+### A note on commit authors (Hobby plan gotcha)
 
-If we upgrade to Pro later — or make the repo public — `vercel git connect git@github.com:moooon-B-V/moooon.git` will switch on push-to-deploy.
+Vercel's Hobby plan requires the **commit author email to match a verified email on the Vercel account that owns the project**. Otherwise the deploy gets stuck in `BLOCKED` state — `vercel ls` shows it `UNKNOWN`, no error in the CLI output, only visible via the API (`vercel.app/docs/deployments/troubleshoot-project-collaboration`).
+
+For this repo, that means `git config user.email` must be `info@moooon.net` (or another email verified on the moooon Vercel account). The global git config is already set; just don't override it locally to something else.
