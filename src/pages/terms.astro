@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+export const prerender = true;
+---
+
+<Layout
+  title="Terms of Use — MOOOON"
+  description="Terms of use for moooon.net."
+>
+  <Nav />
+
+  <main class="mx-auto max-w-3xl px-6 md:px-10 pt-32 md:pt-40 pb-20 md:pb-32">
+    <p class="text-[12px] uppercase tracking-[0.18em] text-[var(--color-muted)] mb-6 flex items-center gap-3">
+      <span class="inline-block h-px w-8 bg-[var(--color-ink)]/30"></span>
+      Terms
+    </p>
+    <h1 class="font-hero text-[40px] md:text-[56px] leading-[1.05] tracking-[-0.02em] font-medium">
+      Terms of use.
+    </h1>
+    <p class="mt-5 text-[16px] md:text-[17px] text-[var(--color-muted)] leading-[1.55]">
+      The full terms governing the use of moooon.net will appear here shortly. The summary below is what applies today.
+    </p>
+
+    <section class="mt-12 space-y-6 text-[15px] md:text-[16px] leading-[1.7] text-[var(--color-ink)]/85">
+      <p>
+        <strong class="text-[var(--color-ink)]">moooon.net</strong> is an informational website operated by
+        <strong class="text-[var(--color-ink)]">moooon B.V.</strong> (Lelystad, the Netherlands · KVK 97763144).
+      </p>
+      <p>
+        By using this site you agree to use it for lawful purposes only. The content, design, and brand marks on
+        moooon.net are the property of moooon B.V. unless otherwise stated, and may not be copied or redistributed
+        without permission.
+      </p>
+      <p>
+        The site is provided "as is" without warranties of any kind. We may update or remove content, and may suspend
+        or discontinue the site at any time without notice.
+      </p>
+      <p>
+        Each product mentioned on the site (Doooo App, Doooo Hub, Prodect) is governed by its own terms when it ships.
+        Submitting your email through a "Notify me" form does not create a contract — it's an expression of interest,
+        and you can unsubscribe at any time.
+      </p>
+      <p>
+        These terms are governed by the laws of the Netherlands. Any dispute will be heard by the competent court in
+        Lelystad, the Netherlands.
+      </p>
+      <p class="text-[14px] text-[var(--color-muted)] mt-12 pt-6 border-t border-[var(--color-line)]/15">
+        Last updated: <time datetime="2026-05-25">May 25, 2026</time> · See also our
+        <a href="/privacy" class="text-[var(--color-brand)] link-underline">Privacy Policy</a> and
+        <a href="/imprint" class="text-[var(--color-brand)] link-underline">Imprint</a>.
+      </p>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

@@ -34,6 +34,28 @@ const {
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Caveat:wght@500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Nabla&display=swap"
     />
+    <!--
+      iubenda modal loader. Any link with .iubenda-embed (and without
+      .iubenda-noiframe) opens iubenda's hosted policy in a modal overlay.
+      Loaded async after window.load so it never blocks rendering.
+    -->
+    <script is:inline>
+      (function (w, d) {
+        var loader = function () {
+          var s = d.createElement('script');
+          var tag = d.getElementsByTagName('script')[0];
+          s.src = 'https://cdn.iubenda.com/iubenda.js';
+          tag.parentNode.insertBefore(s, tag);
+        };
+        if (w.addEventListener) {
+          w.addEventListener('load', loader, false);
+        } else if (w.attachEvent) {
+          w.attachEvent('onload', loader);
+        } else {
+          w.onload = loader;
+        }
+      })(window, document);
+    </script>
   </head>
   <body class="bg-[var(--color-paper)] text-[var(--color-ink)] font-sans">
     <slot />

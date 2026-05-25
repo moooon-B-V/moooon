@@ -18,22 +18,28 @@ async function forwardToResend(email: string, product: string): Promise<void> {
   const apiKey = env.RESEND_API_KEY;
   if (!apiKey) return;
 
-  const audienceMap: Record<string, string | undefined> = {
-    'doooo-app': env.RESEND_AUDIENCE_DOOOO_APP,
-    'doooo-hub': env.RESEND_AUDIENCE_DOOOO_HUB,
-    'prodect': env.RESEND_AUDIENCE_PRODECT,
+  // Doooo App + Doooo Hub signups share one "Doooo" topic.
+  // Prodect has its own. Topics live inside Resend's single default audience.
+  const topicMap: Record<string, string | undefined> = {
+    'doooo-app': env.RESEND_TOPIC_DOOOO,
+    'doooo-hub': env.RESEND_TOPIC_DOOOO,
+    'prodect': env.RESEND_TOPIC_PRODECT,
   };
 
-  const audienceId = audienceMap[product];
-  if (!audienceId) return;
+  const topicId = topicMap[product];
+  if (!topicId) return;
 
-  const response = await fetch(`https://api.resend.com/audiences/${audienceId}/contacts`, {
+  const response = await fetch('https://api.resend.com/contacts', {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ email, unsubscribed: false }),
+    body: JSON.stringify({
+      email,
+      unsubscribed: false,
+      topics: [{ id: topicId, subscription: 'opt_in' }],
+    }),
   });
 
   if (!response.ok) {
