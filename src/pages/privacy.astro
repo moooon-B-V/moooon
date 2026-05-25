@@ -28,15 +28,16 @@ const policyUrl = 'https://www.iubenda.com/privacy-policy/73390507';
     </p>
 
     <!--
-      iubenda no-iframe embed. The script auto-finds .iubenda-embed elements
-      with class iubenda-noiframe, fetches the policy HTML from the linked URL,
-      and injects it inline. Renders the full policy as part of our page —
-      no iframe, no modal.
+      iubenda inline body-embed. The script finds .iubenda-embed with
+      .iub-body-embed, fetches the policy HTML from the linked URL, and
+      injects it directly as page content. iub-legal-only strips iubenda's
+      own title/footer; iub-no-markup suppresses iubenda's own CSS so our
+      typography wins. Result: policy renders inline as part of our page.
     -->
-    <div class="iubenda-policy mt-12 prose prose-neutral max-w-none">
+    <div class="iubenda-policy mt-12 max-w-none">
       <a
         href={policyUrl}
-        class="iubenda-white no-brand iubenda-noiframe iubenda-embed"
+        class="iubenda-embed iub-body-embed iub-legal-only iub-no-markup no-brand"
         title="Privacy Policy"
       >Privacy Policy</a>
     </div>
