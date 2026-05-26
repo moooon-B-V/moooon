@@ -22,16 +22,16 @@ const homeHref = lang === 'zh' ? '/zh' : '/';
   >
     <a href={homeHref} class="group shrink-0" aria-label="MOOOON home">
       <span
-        class="text-[28px] md:text-[40px] leading-none tracking-[0.02em] transition-transform group-hover:scale-[1.02]"
+        class="text-[22px] sm:text-[26px] md:text-[40px] leading-none tracking-[0.02em] transition-transform group-hover:scale-[1.02]"
         style="font-family: 'Nabla', system-ui, sans-serif; font-feature-settings: 'palt';"
       >MOOOON</span>
     </a>
-    <div class="flex items-center gap-3 md:gap-8 text-[12px] md:text-[16px] font-semibold text-[var(--color-ink)]/75 whitespace-nowrap">
+    <div class="flex items-center gap-2.5 sm:gap-3 md:gap-8 text-[11px] sm:text-[12px] md:text-[16px] font-semibold text-[var(--color-ink)]/75 whitespace-nowrap min-w-0">
       <a href={`${homeHref}#doooo-app`} class="hover:text-[var(--color-ink)] transition-colors"><BrandDoooo /> App</a>
       <a href={`${homeHref}#doooo-hub`} class="hover:text-[var(--color-ink)] transition-colors"><BrandDoooo /> Hub</a>
       <a href={`${homeHref}#prodect`} class="hover:text-[var(--color-ink)] transition-colors">Prodect</a>
       <a href="mailto:info@moooon.net" class="hidden md:inline hover:text-[var(--color-ink)] transition-colors">{t(lang, 'navContact')}</a>
-      <a href="mailto:info@moooon.net" aria-label={t(lang, 'navContactAria')} class="md:hidden text-[var(--color-ink)]/60 hover:text-[var(--color-ink)] transition-colors">
+      <a href="mailto:info@moooon.net" aria-label={t(lang, 'navContactAria')} class="md:hidden text-[var(--color-ink)]/60 hover:text-[var(--color-ink)] transition-colors shrink-0">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <rect x="3" y="5" width="18" height="14" rx="2"/>
           <path d="M3 7l9 6 9-6"/>
