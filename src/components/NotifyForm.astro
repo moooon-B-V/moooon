@@ -1,24 +1,33 @@
 ---
+import { t, type Lang } from '../i18n';
+
 interface Props {
   product: 'doooo-app' | 'doooo-hub' | 'prodect';
+  lang?: Lang;
 }
-const { product } = Astro.props;
+const { product, lang = 'en' } = Astro.props;
 ---
 
 <form
   data-notify-form
   data-product={product}
+  data-msg-invalid={t(lang, 'notifyErrorEmail')}
+  data-msg-success={t(lang, 'notifySuccess')}
+  data-msg-error={t(lang, 'notifyError')}
+  data-msg-sending={t(lang, 'notifyButtonSending')}
+  data-msg-button={t(lang, 'notifyButton')}
+  data-msg-done={t(lang, 'notifyButtonDone')}
   class="mt-6 flex flex-col sm:flex-row gap-2"
   novalidate
 >
-  <label class="sr-only" for={`notify-${product}`}>Your email address</label>
+  <label class="sr-only" for={`notify-${product}`}>{t(lang, 'notifyEmailPlaceholder')}</label>
   <input
     type="email"
     id={`notify-${product}`}
     name="email"
     required
     autocomplete="email"
-    placeholder="you@somewhere.com"
+    placeholder={t(lang, 'notifyEmailPlaceholder')}
     class="flex-1 px-4 py-3 text-[14px] bg-[var(--color-paper)] border border-[var(--color-ink)]/20 rounded-md focus:outline-none focus:border-[var(--color-brand)] focus:ring-2 focus:ring-[var(--color-brand)]/20 transition placeholder:text-[var(--color-muted)]"
   />
   <input type="hidden" name="product" value={product} />
@@ -26,7 +35,7 @@ const { product } = Astro.props;
     type="submit"
     class="px-5 py-3 text-[14px] font-medium bg-[var(--color-ink)] text-white rounded-md hover:bg-[var(--color-brand)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2 group"
   >
-    <span data-notify-label>Notify me</span>
+    <span data-notify-label>{t(lang, 'notifyButton')}</span>
     <svg
       width="14"
       height="14"
@@ -52,16 +61,23 @@ const { product } = Astro.props;
       const email = emailInput?.value.trim() ?? '';
       const product = form.dataset.product ?? 'unknown';
 
+      const msgInvalid = form.dataset.msgInvalid || "That email doesn't look right.";
+      const msgSuccess = form.dataset.msgSuccess || "You're on the list. We'll only email when there's something to show.";
+      const msgError = form.dataset.msgError || 'Something went wrong. Try again in a minute.';
+      const msgSending = form.dataset.msgSending || 'Sending…';
+      const msgButton = form.dataset.msgButton || 'Notify me';
+      const msgDone = form.dataset.msgDone || 'Subscribed';
+
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         if (status) {
-          status.textContent = 'That email doesn\'t look right.';
+          status.textContent = msgInvalid;
           status.style.color = '#b00020';
         }
         return;
       }
 
       if (button) button.disabled = true;
-      if (label) label.textContent = 'Sending…';
+      if (label) label.textContent = msgSending;
       if (status) {
         status.textContent = '';
         status.style.color = '';
@@ -75,17 +91,17 @@ const { product } = Astro.props;
         });
         if (!res.ok) throw new Error(`status ${res.status}`);
         if (status) {
-          status.textContent = 'You\'re on the list. We\'ll only email when there\'s something to show.';
+          status.textContent = msgSuccess;
           status.style.color = '#360eff';
         }
         if (emailInput) emailInput.value = '';
-        if (label) label.textContent = 'Subscribed';
+        if (label) label.textContent = msgDone;
       } catch {
         if (status) {
-          status.textContent = 'Something went wrong. Try again in a minute.';
+          status.textContent = msgError;
           status.style.color = '#b00020';
         }
-        if (label) label.textContent = 'Notify me';
+        if (label) label.textContent = msgButton;
         if (button) button.disabled = false;
       }
     });

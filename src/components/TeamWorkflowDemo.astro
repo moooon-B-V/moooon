@@ -1,5 +1,11 @@
 ---
 import BrandDoooo from './BrandDoooo.astro';
+import { t, type Lang } from '../i18n';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = 'en' } = Astro.props;
 ---
 
 <figure class="not-prose my-8">
@@ -13,15 +19,15 @@ import BrandDoooo from './BrandDoooo.astro';
         <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>
         <span class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></span>
         <span class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></span>
-        <span class="ml-3 text-[11px] text-white/40 font-mono">doooo-hub · Content Creator team</span>
-        <span class="ml-auto text-[10px] text-white/40">MLX · M2 Max · 14B Qwen</span>
+        <span class="ml-3 text-[11px] text-white/40 font-mono">{t(lang, 'twTitle')}</span>
+        <span class="ml-auto text-[10px] text-white/40">{t(lang, 'twMeta')}</span>
       </div>
 
       <!-- Goal -->
       <div class="px-5 py-3 border-b border-white/10 bg-white/[0.02]">
-        <span class="text-[10px] uppercase tracking-[0.18em] text-white/40">Goal</span>
+        <span class="text-[10px] uppercase tracking-[0.18em] text-white/40">{t(lang, 'twGoalKicker')}</span>
         <div class="text-[13px] text-white/90 mt-0.5">
-          Publish a launch post about MLX speedups across X, LinkedIn, Threads.
+          {t(lang, 'twGoal')}
         </div>
       </div>
 
@@ -29,26 +35,26 @@ import BrandDoooo from './BrandDoooo.astro';
       <div class="grid grid-cols-4 gap-px bg-white/5">
         <div class="agent-card agent-card-1 bg-black/40 px-3 py-4 flex flex-col items-center gap-2 relative">
           <div class="agent-dot agent-dot-1 w-2 h-2 rounded-full bg-emerald-400"></div>
-          <div class="text-[11px] font-semibold text-white/90">Researcher</div>
-          <div class="text-[10px] text-white/40 text-center leading-tight">web search<br/>+ MLX</div>
+          <div class="text-[11px] font-semibold text-white/90">{t(lang, 'twAgent1Name')}</div>
+          <div class="text-[10px] text-white/40 text-center leading-tight">{t(lang, 'twAgent1Sub1')}<br/>{t(lang, 'twAgent1Sub2')}</div>
           <div class="agent-output agent-output-1 absolute -bottom-1 left-2 right-2 h-0.5 bg-emerald-400/60 rounded-full"></div>
         </div>
         <div class="agent-card agent-card-2 bg-black/40 px-3 py-4 flex flex-col items-center gap-2 relative">
           <div class="agent-dot agent-dot-2 w-2 h-2 rounded-full bg-white/15"></div>
-          <div class="text-[11px] font-semibold text-white/90">Copywriter</div>
-          <div class="text-[10px] text-white/40 text-center leading-tight">draft post<br/>via MLX</div>
+          <div class="text-[11px] font-semibold text-white/90">{t(lang, 'twAgent2Name')}</div>
+          <div class="text-[10px] text-white/40 text-center leading-tight">{t(lang, 'twAgent2Sub1')}<br/>{t(lang, 'twAgent2Sub2')}</div>
           <div class="agent-output agent-output-2 absolute -bottom-1 left-2 right-2 h-0.5 bg-emerald-400/60 rounded-full"></div>
         </div>
         <div class="agent-card agent-card-3 bg-black/40 px-3 py-4 flex flex-col items-center gap-2 relative">
           <div class="agent-dot agent-dot-3 w-2 h-2 rounded-full bg-white/15"></div>
-          <div class="text-[11px] font-semibold text-white/90">Editor</div>
-          <div class="text-[10px] text-white/40 text-center leading-tight">tone +<br/>accuracy</div>
+          <div class="text-[11px] font-semibold text-white/90">{t(lang, 'twAgent3Name')}</div>
+          <div class="text-[10px] text-white/40 text-center leading-tight">{t(lang, 'twAgent3Sub1')}<br/>{t(lang, 'twAgent3Sub2')}</div>
           <div class="agent-output agent-output-3 absolute -bottom-1 left-2 right-2 h-0.5 bg-emerald-400/60 rounded-full"></div>
         </div>
         <div class="agent-card agent-card-4 bg-black/40 px-3 py-4 flex flex-col items-center gap-2 relative">
           <div class="agent-dot agent-dot-4 w-2 h-2 rounded-full bg-white/15"></div>
-          <div class="text-[11px] font-semibold text-white/90">Social Mgr</div>
-          <div class="text-[10px] text-white/40 text-center leading-tight">schedule to<br/>X · LI · Threads</div>
+          <div class="text-[11px] font-semibold text-white/90">{t(lang, 'twAgent4Name')}</div>
+          <div class="text-[10px] text-white/40 text-center leading-tight">{t(lang, 'twAgent4Sub1')}<br/>{t(lang, 'twAgent4Sub2')}</div>
           <div class="agent-output agent-output-4 absolute -bottom-1 left-2 right-2 h-0.5 bg-emerald-400/60 rounded-full"></div>
         </div>
       </div>
@@ -56,74 +62,176 @@ import BrandDoooo from './BrandDoooo.astro';
       <!-- Activity log -->
       <div class="px-5 py-4 bg-black/40 border-t border-white/10 min-h-[140px] font-mono text-[11px] text-white/60 space-y-1">
         <div class="log-line log-1">
-          <span class="text-emerald-400">→</span> Researcher · pulled 5 MLX benchmark sources
+          <span class="text-emerald-400">→</span> {t(lang, 'twLog1')}
         </div>
         <div class="log-line log-2">
-          <span class="text-emerald-400">→</span> Copywriter · drafted 280-char post, 1200-char article
+          <span class="text-emerald-400">→</span> {t(lang, 'twLog2')}
         </div>
         <div class="log-line log-3">
-          <span class="text-emerald-400">→</span> Editor · tone pass, fact-check passed
+          <span class="text-emerald-400">→</span> {t(lang, 'twLog3')}
         </div>
         <div class="log-line log-4">
-          <span class="text-emerald-400">→</span> Social Mgr · scheduled to X 9am, LI 10am, Threads 11am
+          <span class="text-emerald-400">→</span> {t(lang, 'twLog4')}
         </div>
         <div class="log-line log-5 text-white/90">
-          <span class="text-emerald-400">✓</span> Workflow complete · all on-device · 41s total
+          <span class="text-emerald-400">✓</span> {t(lang, 'twLog5')}
         </div>
       </div>
     </div>
 
     <figcaption class="mt-5 text-center text-[12px] text-white/60 leading-[1.5]">
-      <span class="text-white font-medium">A team of agents, one workflow.</span>
-      Hub runs them locally with MLX on your Mac. Pick a team from <BrandDoooo />, build your own, or hire one from the marketplace.
+      <span class="text-white font-medium">{t(lang, 'twCaptionBefore')}</span>
+      {t(lang, 'twCaptionPre')}<BrandDoooo />{t(lang, 'twCaptionPost')}
     </figcaption>
   </div>
 
   <style>
+    /*
+      ============================================================
+      Animation timing — single 14s master loop, hard reset.
+      ============================================================
+
+      Each element animates over the SAME 14s duration so all
+      iterations stay synchronized. The animation-delay is NEGATIVE
+      (not positive) — that means each element starts "partway
+      through" its first iteration so the visual sequence appears
+      staggered, but every element resets at the same absolute clock.
+
+      Result: at t=14s (and every 14s thereafter) every element
+      simultaneously returns to its 0%/100% state — i.e. idle.
+      The "all four bars filled" moment exists only briefly around
+      t=12-13.5s, then everything resets together.
+    */
+
     .agent-dot {
-      animation: dot-active 16s ease-in-out infinite;
+      animation: dot-active 14s ease-in-out infinite;
     }
     .agent-dot-1 { animation-delay: 0s; }
-    .agent-dot-2 { animation-delay: 3.5s; }
-    .agent-dot-3 { animation-delay: 7s; }
-    .agent-dot-4 { animation-delay: 10.5s; }
+    .agent-dot-2 { animation-delay: -10.5s; } /* runs 3.5s ahead of 14s loop → starts visually 3.5s later */
+    .agent-dot-3 { animation-delay: -7s; }
+    .agent-dot-4 { animation-delay: -3.5s; }
 
-    @keyframes dot-active {
-      0%, 1.5%   { background-color: rgba(255,255,255,0.15); box-shadow: none; }
-      2%, 20%    { background-color: rgb(52, 211, 153); box-shadow: 0 0 10px rgba(52, 211, 153, 0.7); }
-      21%, 100%  { background-color: rgba(52, 211, 153, 0.5); box-shadow: none; }
+    /* Wait — negative delay moves the *animation phase*, not the visual stagger we want.
+       For a staggered start with synchronized reset, the right pattern is:
+         - Same duration on every element
+         - Per-element positive delay
+         - First iteration has the delay, all later iterations are synced
+       The problem: CSS doesn't natively give you "delay only on first iteration."
+       The fix: structure the keyframe so that the "active" phase is small relative
+       to the loop, and the rest is idle. The visual stagger comes from each agent's
+       keyframe placing its active window at a different % of the loop.
+       Below: agent-1 active 0-25%, agent-2 active 25-50%, etc. All elements
+       share the same animation-delay = 0. */
+
+    .agent-dot {
+      animation: dot-active 14s linear infinite;
+      animation-delay: 0s !important;
+    }
+    .agent-dot-1 { animation-name: agent1-dot; }
+    .agent-dot-2 { animation-name: agent2-dot; }
+    .agent-dot-3 { animation-name: agent3-dot; }
+    .agent-dot-4 { animation-name: agent4-dot; }
+
+    /* Agent-N becomes active at (N-1)*21% of the loop, holds at "done" until 90%,
+       fades back to idle by 100%. Final 10% of the loop is the visible "reset" window. */
+
+    @keyframes agent1-dot {
+      0%        { background-color: rgba(255,255,255,0.15); box-shadow: none; }
+      2%, 18%   { background-color: rgb(52, 211, 153); box-shadow: 0 0 10px rgba(52, 211, 153, 0.7); }
+      22%, 90%  { background-color: rgba(52, 211, 153, 0.5); box-shadow: none; }
+      95%, 100% { background-color: rgba(255,255,255,0.15); box-shadow: none; }
+    }
+    @keyframes agent2-dot {
+      0%, 21%   { background-color: rgba(255,255,255,0.15); box-shadow: none; }
+      23%, 39%  { background-color: rgb(52, 211, 153); box-shadow: 0 0 10px rgba(52, 211, 153, 0.7); }
+      43%, 90%  { background-color: rgba(52, 211, 153, 0.5); box-shadow: none; }
+      95%, 100% { background-color: rgba(255,255,255,0.15); box-shadow: none; }
+    }
+    @keyframes agent3-dot {
+      0%, 42%   { background-color: rgba(255,255,255,0.15); box-shadow: none; }
+      44%, 60%  { background-color: rgb(52, 211, 153); box-shadow: 0 0 10px rgba(52, 211, 153, 0.7); }
+      64%, 90%  { background-color: rgba(52, 211, 153, 0.5); box-shadow: none; }
+      95%, 100% { background-color: rgba(255,255,255,0.15); box-shadow: none; }
+    }
+    @keyframes agent4-dot {
+      0%, 63%   { background-color: rgba(255,255,255,0.15); box-shadow: none; }
+      65%, 81%  { background-color: rgb(52, 211, 153); box-shadow: 0 0 10px rgba(52, 211, 153, 0.7); }
+      85%, 90%  { background-color: rgba(52, 211, 153, 0.5); box-shadow: none; }
+      95%, 100% { background-color: rgba(255,255,255,0.15); box-shadow: none; }
     }
 
     .agent-output {
       transform: scaleX(0);
       transform-origin: left;
-      animation: output-fill 16s ease-out infinite;
+      animation-duration: 14s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-out;
+      animation-delay: 0s;
     }
-    .agent-output-1 { animation-delay: 0s; }
-    .agent-output-2 { animation-delay: 3.5s; }
-    .agent-output-3 { animation-delay: 7s; }
-    .agent-output-4 { animation-delay: 10.5s; }
+    .agent-output-1 { animation-name: agent1-bar; }
+    .agent-output-2 { animation-name: agent2-bar; }
+    .agent-output-3 { animation-name: agent3-bar; }
+    .agent-output-4 { animation-name: agent4-bar; }
 
-    @keyframes output-fill {
+    @keyframes agent1-bar {
       0%, 2%    { transform: scaleX(0); }
-      18%, 100% { transform: scaleX(1); }
+      18%, 90%  { transform: scaleX(1); }
+      95%, 100% { transform: scaleX(0); }
+    }
+    @keyframes agent2-bar {
+      0%, 23%   { transform: scaleX(0); }
+      39%, 90%  { transform: scaleX(1); }
+      95%, 100% { transform: scaleX(0); }
+    }
+    @keyframes agent3-bar {
+      0%, 44%   { transform: scaleX(0); }
+      60%, 90%  { transform: scaleX(1); }
+      95%, 100% { transform: scaleX(0); }
+    }
+    @keyframes agent4-bar {
+      0%, 65%   { transform: scaleX(0); }
+      81%, 90%  { transform: scaleX(1); }
+      95%, 100% { transform: scaleX(0); }
     }
 
     .log-line {
       opacity: 0;
       transform: translateY(4px);
-      animation: log-in 16s ease-out infinite;
+      animation-duration: 14s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-out;
+      animation-delay: 0s;
     }
-    .log-1 { animation-delay: 1.8s; }
-    .log-2 { animation-delay: 5.3s; }
-    .log-3 { animation-delay: 8.8s; }
-    .log-4 { animation-delay: 12.3s; }
-    .log-5 { animation-delay: 14s; }
+    .log-1 { animation-name: log1; }
+    .log-2 { animation-name: log2; }
+    .log-3 { animation-name: log3; }
+    .log-4 { animation-name: log4; }
+    .log-5 { animation-name: log5; }
 
-    @keyframes log-in {
-      0%, 0.5%   { opacity: 0; transform: translateY(4px); }
-      2%, 88%    { opacity: 1; transform: translateY(0); }
-      94%, 100%  { opacity: 0; transform: translateY(0); }
+    @keyframes log1 {
+      0%, 9%    { opacity: 0; transform: translateY(4px); }
+      11%, 90%  { opacity: 1; transform: translateY(0); }
+      94%, 100% { opacity: 0; transform: translateY(0); }
+    }
+    @keyframes log2 {
+      0%, 30%   { opacity: 0; transform: translateY(4px); }
+      32%, 90%  { opacity: 1; transform: translateY(0); }
+      94%, 100% { opacity: 0; transform: translateY(0); }
+    }
+    @keyframes log3 {
+      0%, 51%   { opacity: 0; transform: translateY(4px); }
+      53%, 90%  { opacity: 1; transform: translateY(0); }
+      94%, 100% { opacity: 0; transform: translateY(0); }
+    }
+    @keyframes log4 {
+      0%, 72%   { opacity: 0; transform: translateY(4px); }
+      74%, 90%  { opacity: 1; transform: translateY(0); }
+      94%, 100% { opacity: 0; transform: translateY(0); }
+    }
+    @keyframes log5 {
+      0%, 85%   { opacity: 0; transform: translateY(4px); }
+      87%, 90%  { opacity: 1; transform: translateY(0); }
+      94%, 100% { opacity: 0; transform: translateY(0); }
     }
 
     @media (prefers-reduced-motion: reduce) {

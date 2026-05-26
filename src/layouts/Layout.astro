@@ -1,19 +1,26 @@
 ---
 import '../styles/global.css';
+import type { Lang } from '../i18n';
+import { dict } from '../i18n';
 
 interface Props {
+  lang?: Lang;
   title?: string;
   description?: string;
 }
 
-const {
-  title = "MOOOON — three products, built by the tool we're building",
-  description = 'MOOOON builds Doooo App, Doooo Hub, and Prodect. We use the workflow Prodect codifies to build all three.',
-} = Astro.props;
+const { lang = 'en' } = Astro.props;
+const fallback = dict[lang];
+const title = Astro.props.title ?? fallback.metaTitle;
+const description = Astro.props.description ?? fallback.metaDescription;
+
+const canonicalPath = lang === 'zh' ? '/zh' : '/';
+const altPath = lang === 'zh' ? '/' : '/zh';
+const altLang = lang === 'zh' ? 'en' : 'zh-CN';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang === 'zh' ? 'zh-CN' : 'en'}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,12 +34,17 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://moooon.net" />
+    <meta property="og:url" content={`https://moooon.net${canonicalPath}`} />
+    <meta property="og:locale" content={lang === 'zh' ? 'zh_CN' : 'en_US'} />
+    <link rel="canonical" href={`https://moooon.net${canonicalPath}`} />
+    <link rel="alternate" hreflang={altLang} href={`https://moooon.net${altPath}`} />
+    <link rel="alternate" hreflang={lang === 'zh' ? 'zh-CN' : 'en'} href={`https://moooon.net${canonicalPath}`} />
+    <link rel="alternate" hreflang="x-default" href="https://moooon.net/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Caveat:wght@500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Nabla&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Caveat:wght@500;600;700&family=Long+Cang&family=Quicksand:wght@300;400;500;600;700&family=Nabla&family=ZCOOL+XiaoWei&display=swap"
     />
     <!--
       iubenda modal loader. Any link with .iubenda-embed (and without

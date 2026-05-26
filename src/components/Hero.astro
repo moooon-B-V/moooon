@@ -1,4 +1,10 @@
 ---
+import { t, type Lang } from '../i18n';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = 'en' } = Astro.props;
 ---
 
 <section class="relative overflow-hidden">
@@ -28,18 +34,16 @@
 
   <div class="relative z-10 mx-auto max-w-6xl px-6 md:px-10 pt-32 md:pt-40 pb-20 md:pb-32">
   <h1 class="font-hero text-[56px] sm:text-[80px] md:text-[112px] lg:text-[136px] leading-[0.95] tracking-[-0.035em] font-medium">
-    Three products.<br />
-    <span class="text-[var(--color-brand)]">Built by the tool<br />we're building.</span>
+    {t(lang, 'heroLineA')}<br />
+    <span class="text-[var(--color-brand)]">{t(lang, 'heroLineB')}<br />{t(lang, 'heroLineC')}</span>
   </h1>
   <div class="mt-10 md:mt-14 max-w-2xl text-[18px] md:text-[20px] leading-[1.55] text-[var(--color-muted)]">
     <p>
-      MOOOON is building three pieces of software — a task manager, an AI-team desktop runtime, and the
-      project-management tool that plans them both. The third one isn't shipped yet. We're using its workflow to build
-      the other two anyway. <a href="#doooo" class="text-[var(--color-ink)] link-underline">See how</a>.
+      {t(lang, 'heroSubBefore')} <a href="#doooo" class="text-[var(--color-ink)] link-underline">{t(lang, 'heroSubLinkLabel')}</a>
     </p>
   </div>
   <div class="mt-16 md:mt-24 flex items-center gap-3 text-[12px] uppercase tracking-[0.18em] text-[var(--color-muted)]">
-    <span>Scroll</span>
+    <span>{t(lang, 'heroScrollLabel')}</span>
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="animate-pulse">
       <path d="M10 4v12m0 0l-4-4m4 4l4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
     </svg>

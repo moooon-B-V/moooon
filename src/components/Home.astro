@@ -1,0 +1,201 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from './Nav.astro';
+import Hero from './Hero.astro';
+import ProductCard from './ProductCard.astro';
+import DoooooGlyph from './DoooooGlyph.astro';
+import BrandDoooo from './BrandDoooo.astro';
+import AiPlanDemo from './AiPlanDemo.astro';
+import AppHubIntegrationDemo from './AppHubIntegrationDemo.astro';
+import TeamWorkflowDemo from './TeamWorkflowDemo.astro';
+import ProdectWorkflowDemo from './ProdectWorkflowDemo.astro';
+import Footer from './Footer.astro';
+import { t, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const isZh = lang === 'zh';
+---
+
+<Layout lang={lang}>
+  <Nav lang={lang} />
+  <Hero lang={lang} />
+
+  <!-- ======== DOOOO ======== -->
+  <section id="doooo" class="mx-auto max-w-6xl px-6 md:px-10 pt-24 pb-12">
+    <div class="flex items-center gap-3 mb-6">
+      <DoooooGlyph class="text-[var(--color-brand)]" size={36} />
+      <span class="text-[11px] uppercase tracking-[0.18em] text-[var(--color-muted)]">{t(lang, 'doooooKicker')} <BrandDoooo /></span>
+    </div>
+    <h2 class="font-hero text-[40px] md:text-[56px] leading-[1.05] tracking-[-0.02em] font-medium max-w-3xl">
+      {t(lang, 'doooooHeadline')}
+    </h2>
+    <p class="mt-5 max-w-2xl text-[17px] md:text-[18px] text-[var(--color-muted)] leading-[1.55]">
+      {isZh ? (
+        <>
+          一个品牌，两款应用。<BrandDoooo /> App承载你的任务、日历与群组协作；<BrandDoooo /> Hub让你的AI代理在自己的桌面上运行。两者天生协同，独立使用也完全没问题。
+        </>
+      ) : (
+        <>
+          Two apps under one brand. <BrandDoooo /> App is where your tasks, calendar, and groups live.
+          <BrandDoooo /> Hub is where your AI agents work. They're built to play well together — but each one
+          stands on its own.
+        </>
+      )}
+    </p>
+  </section>
+
+  <div class="mx-auto max-w-6xl px-6 md:px-10">
+    <!-- Doooo App -->
+    <ProductCard
+      product="doooo-app"
+      index={t(lang, 'appIndex')}
+      name={t(lang, 'appName')}
+      tagline={t(lang, 'appTagline')}
+      lang={lang}
+    >
+      <Fragment slot="title"><BrandDoooo /> App</Fragment>
+      <div class="flex items-center gap-3 mb-6 -mt-2">
+        <span class="text-[11px] uppercase tracking-[0.18em] text-[var(--color-muted)]">{t(lang, 'appPlatforms')}</span>
+      </div>
+
+      {isZh ? (
+        <>
+          <p>
+            <BrandDoooo /> App承载你的<span class="font-pop">待办清单</span>、你的<span class="font-pop">日历</span>，以及你所在每一个<span class="font-pop">群组</span>的共享清单与日历——家人、团队、与朋友一同筹划的旅行。所有与时间相关的事，都在同一处。
+          </p>
+          <p>
+            真正出彩的是内置的<span class="font-pop">AI规划助手</span>。告诉它「六周学会吉他」「为10公里赛跑训练」「这一季度上线我的副业项目」「为妹妹策划一场生日聚会」——它会判断你需要的是哪一种计划，并在你的日历上排出真实、有节奏的任务，而不是给你一篇大而空的建议。
+          </p>
+
+          <AiPlanDemo lang={lang} />
+
+          <p>
+            规划助手擅长这些场景：<span class="font-pop">学习一项技能</span>、<span class="font-pop">日常作息</span>、<span class="font-pop">健康与健身</span>、<span class="font-pop">创作型项目</span>、<span class="font-pop">养成一个习惯</span>、<span class="font-pop">活动与筹备</span>。每一种都有自己的节奏、自己用来厘清需求的提问方式、自己的资源风格——毕竟，学吉他和备战马拉松完全是两回事。
+          </p>
+        </>
+      ) : (
+        <>
+          <p>
+            <BrandDoooo /> App holds your <span class="font-pop">to-do list</span>, your <span class="font-pop">calendar</span>, and the
+            shared lists and calendars of every <span class="font-pop">group</span> you're in — your family, your team, your
+            friends planning a trip. One surface for everything time-shaped.
+          </p>
+          <p>
+            The interesting part: an <span class="font-pop">AI planner</span> built in. Tell it "learn guitar in six weeks,"
+            "train for a 10K," "launch my side project this quarter," "plan my sister's birthday party" — it
+            figures out what kind of plan you're asking for and lays it out as real, paced tasks on your calendar,
+            not a wall of generic advice.
+          </p>
+
+          <AiPlanDemo lang={lang} />
+
+          <p>
+            Things the planner is good at: <span class="font-pop">learning a skill</span>, <span class="font-pop">daily routines</span>,
+            <span class="font-pop">health & fitness</span>, <span class="font-pop">creative projects</span>, <span class="font-pop">building a habit</span>,
+            <span class="font-pop">events & logistics</span>. Each gets its own pacing, its own questions to clarify the brief, its own
+            resource style — because how you learn guitar isn't how you train for a marathon.
+          </p>
+        </>
+      )}
+    </ProductCard>
+
+    <!-- App ↔ Hub integration bridge -->
+    <AppHubIntegrationDemo lang={lang} />
+
+    <!-- Doooo Hub -->
+    <ProductCard
+      product="doooo-hub"
+      index={t(lang, 'hubIndex')}
+      name={t(lang, 'hubName')}
+      tagline={t(lang, 'hubTagline')}
+      lang={lang}
+    >
+      <Fragment slot="title"><BrandDoooo /> Hub</Fragment>
+      <div class="flex items-center gap-3 mb-6 -mt-2">
+        <span class="text-[11px] uppercase tracking-[0.18em] text-[var(--color-muted)]">{t(lang, 'hubPlatforms')}</span>
+      </div>
+
+      {isZh ? (
+        <>
+          <p>
+            <BrandDoooo /> Hub不是一个助手，而是一整支<span class="font-pop">协同走完整个工作流的AI团队</span>的桌面家园。可以直接采用<BrandDoooo />内置的团队（<strong>Content Creator</strong>、Brand Designer、Product Designer、E-commerce Seller），也可以自己搭建——自定义代理、挑选工具、编写串连它们的工作流。做得足够好，就发布到市场上。
+          </p>
+
+          <TeamWorkflowDemo lang={lang} />
+
+          <p>
+            在macOS上，Hub通过<strong>Apple的MLX框架</strong>运行本地模型——专为Apple Silicon的统一内存设计，让7B至70B参数的模型在MacBook上真正跑得起来，不必租用GPU。同时也支持云端LLM，但主打本地：你的代码、你的密钥、你的仓库、你的硬件。
+          </p>
+        </>
+      ) : (
+        <>
+          <p>
+            <BrandDoooo /> Hub isn't one assistant — it's a desktop home for <span class="font-pop">teams of agents that work together on a workflow</span>. Start with a built-in team from <BrandDoooo /> (<strong>Content Creator</strong>,
+            Brand Designer, Product Designer, E-commerce Seller) or build your own — design the agents, pick
+            their tools, write the workflow that connects them. When it's good, publish it to the marketplace.
+          </p>
+
+          <TeamWorkflowDemo lang={lang} />
+
+          <p>
+            On macOS, Hub runs local models through <strong>Apple's MLX framework</strong> — the unified-memory,
+            Apple-Silicon-native runtime that makes 7-70B-parameter models genuinely fast on a MacBook, no GPU
+            rental required. Cloud LLMs work too. The headline is on-device: your code, your keys, your repo,
+            your hardware.
+          </p>
+        </>
+      )}
+    </ProductCard>
+
+    <!-- Prodect -->
+    <ProductCard
+      product="prodect"
+      index={t(lang, 'prodectIndex')}
+      name={t(lang, 'prodectName')}
+      tagline={t(lang, 'prodectTagline')}
+      lang={lang}
+    >
+      <div class="flex items-center gap-3 mb-6 -mt-2">
+        <span class="font-mono text-[var(--color-brand)] font-semibold text-[16px]">{`{ }`}</span>
+        <span class="text-[11px] uppercase tracking-[0.18em] text-[var(--color-muted)]">{t(lang, 'prodectMeta')}</span>
+      </div>
+
+      {isZh ? (
+        <>
+          <p>
+            开源版的Jira，内置规划智能。描述你想打造什么，Prodect会产出一棵<span class="font-pop">Epic → Story → Subtask</span>任务树，把代码类Subtask连同详尽的提示词一并交给你的编程代理（Claude Code、Cursor、Devin、Aider）端到端执行，其余的留给你自己完成。它正在用自己的工作流来打造自己——也在打造<BrandDoooo />。
+          </p>
+
+          <ProdectWorkflowDemo lang={lang} />
+
+          <p>
+            <strong>prodect-core</strong>基于GPL-3.0开源——Work Item、Story、依赖图、多租户工作区、树状视图UI、GitHub集成。规划大脑（<strong>prodect-ai</strong>）以托管服务的形式提供。浏览器只与prodect-core通信，AI层走服务端到服务端。这套打法GitLab、Sentry、Plane、Mattermost都在用。
+          </p>
+        </>
+      ) : (
+        <>
+          <p>
+            Open-source Jira, with planning intelligence built in. Describe what you want to build; Prodect
+            produces an <span class="font-pop">Epic → Story → Subtask</span> tree, hands the coding Subtasks
+            to your coding agent (Claude Code, Cursor, Devin, Aider) with a rich prompt it can execute end-to-end,
+            and leaves the rest for you to do yourself. It's using its own workflow to build itself — and <BrandDoooo />.
+          </p>
+
+          <ProdectWorkflowDemo lang={lang} />
+
+          <p>
+            <strong>prodect-core</strong> is GPL-3.0 open-source — Work Items, Stories, dependency graphs,
+            multi-tenant workspaces, the tree-view UI, GitHub integration. The planning brain
+            (<strong>prodect-ai</strong>) ships as a hosted service. Browsers only ever talk to prodect-core; the
+            AI layer is server-to-server. Same playbook GitLab, Sentry, Plane, and Mattermost use.
+          </p>
+        </>
+      )}
+    </ProductCard>
+  </div>
+
+  <Footer lang={lang} />
+</Layout>

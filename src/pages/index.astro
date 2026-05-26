@@ -1,131 +1,25 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
-import Hero from '../components/Hero.astro';
-import ProductCard from '../components/ProductCard.astro';
-import DoooooGlyph from '../components/DoooooGlyph.astro';
-import BrandDoooo from '../components/BrandDoooo.astro';
-import AiPlanDemo from '../components/AiPlanDemo.astro';
-import AppHubIntegrationDemo from '../components/AppHubIntegrationDemo.astro';
-import TeamWorkflowDemo from '../components/TeamWorkflowDemo.astro';
-import ProdectWorkflowDemo from '../components/ProdectWorkflowDemo.astro';
-import Footer from '../components/Footer.astro';
+import Home from '../components/Home.astro';
 
 export const prerender = true;
 ---
 
-<Layout>
-  <Nav />
-  <Hero />
+<Home lang="en" />
 
-  <!-- ======== DOOOO ======== -->
-  <section id="doooo" class="mx-auto max-w-6xl px-6 md:px-10 pt-24 pb-12">
-    <div class="flex items-center gap-3 mb-6">
-      <DoooooGlyph class="text-[var(--color-brand)]" size={36} />
-      <span class="text-[11px] uppercase tracking-[0.18em] text-[var(--color-muted)]">01 · <BrandDoooo /></span>
-    </div>
-    <h2 class="font-hero text-[40px] md:text-[56px] leading-[1.05] tracking-[-0.02em] font-medium max-w-3xl">
-      An app for your time. A desktop for your AI team.
-    </h2>
-    <p class="mt-5 max-w-2xl text-[17px] md:text-[18px] text-[var(--color-muted)] leading-[1.55]">
-      Two apps under one brand. <BrandDoooo /> App is where your tasks, calendar, and groups live.
-      <BrandDoooo /> Hub is where your AI agents work. They're built to play well together — but each one
-      stands on its own.
-    </p>
-  </section>
-
-  <div class="mx-auto max-w-6xl px-6 md:px-10">
-    <!-- Doooo App -->
-    <ProductCard
-      product="doooo-app"
-      index="01a"
-      name="Doooo App"
-      tagline="All-in-one time and task management. Tell it what you want; it makes the plan."
-    >
-      <Fragment slot="title"><BrandDoooo /> App</Fragment>
-      <div class="flex items-center gap-3 mb-6 -mt-2">
-        <span class="text-[11px] uppercase tracking-[0.18em] text-[var(--color-muted)]">iOS · Android · Web</span>
-      </div>
-      <p>
-        <BrandDoooo /> App holds your <span class="font-pop">to-do list</span>, your <span class="font-pop">calendar</span>, and the
-        shared lists and calendars of every <span class="font-pop">group</span> you're in — your family, your team, your
-        friends planning a trip. One surface for everything time-shaped.
-      </p>
-      <p>
-        The interesting part: an <span class="font-pop">AI planner</span> built in. Tell it "learn guitar in six weeks,"
-        "train for a 10K," "launch my side project this quarter," "plan my sister's birthday party" — it
-        classifies what kind of plan you're asking for and lays it out as real, paced tasks on your calendar,
-        not a wall of generic advice.
-      </p>
-
-      <AiPlanDemo />
-
-      <p>
-        Things the planner is good at: <span class="font-pop">learning a skill</span>, <span class="font-pop">daily routines</span>,
-        <span class="font-pop">health & fitness</span>, <span class="font-pop">creative projects</span>, <span class="font-pop">building a habit</span>,
-        <span class="font-pop">events & logistics</span>. Each gets its own pacing, its own questions to clarify the brief, its own
-        resource style — because how you learn guitar isn't how you train for a marathon.
-      </p>
-    </ProductCard>
-
-    <!-- App ↔ Hub integration bridge -->
-    <AppHubIntegrationDemo />
-
-    <!-- Doooo Hub -->
-    <ProductCard
-      product="doooo-hub"
-      index="01b"
-      name="Doooo Hub"
-      tagline="A desktop harness for local and remote AI. Run agent teams on your machine."
-    >
-      <Fragment slot="title"><BrandDoooo /> Hub</Fragment>
-      <div class="flex items-center gap-3 mb-6 -mt-2">
-        <span class="text-[11px] uppercase tracking-[0.18em] text-[var(--color-muted)]">macOS · Apple Silicon · MLX</span>
-      </div>
-      <p>
-        <BrandDoooo /> Hub isn't one assistant — it's a desktop home for <span class="font-pop">teams of agents that work together on a workflow</span>. Start with a built-in team from <BrandDoooo /> (<strong>Content Creator</strong>,
-        Brand Designer, Product Designer, E-commerce Seller) or build your own — design the agents, pick
-        their tools, write the workflow that connects them. When it's good, publish it to the marketplace.
-      </p>
-
-      <TeamWorkflowDemo />
-
-      <p>
-        On macOS, Hub runs local models through <strong>Apple's MLX framework</strong> — the unified-memory,
-        Apple-Silicon-native runtime that makes 7-70B-parameter models genuinely fast on a MacBook, no GPU
-        rental required. Cloud LLMs work too. The headline is on-device: your code, your keys, your repo,
-        your hardware.
-      </p>
-    </ProductCard>
-
-    <!-- Prodect -->
-    <ProductCard
-      product="prodect"
-      index="02"
-      name="Prodect"
-      tagline="AI-native project management. Open core."
-    >
-      <div class="flex items-center gap-3 mb-6 -mt-2">
-        <span class="font-mono text-[var(--color-brand)] font-semibold text-[16px]">{`{ }`}</span>
-        <span class="text-[11px] uppercase tracking-[0.18em] text-[var(--color-muted)]">Open core · GPL-3.0 + hosted brain</span>
-      </div>
-      <p>
-        Open-source Jira, with planning intelligence built in. Describe what you want to build; Prodect
-        produces an <span class="font-pop">Epic → Story → Subtask</span> tree, hands the coding Subtasks
-        to your coding agent (Claude Code, Cursor, Devin, Aider) with a rich prompt it can execute end-to-end,
-        and leaves the rest for you to do yourself. It's using its own workflow to build itself — and <BrandDoooo />.
-      </p>
-
-      <ProdectWorkflowDemo />
-
-      <p>
-        <strong>prodect-core</strong> is GPL-3.0 open-source — Work Items, Stories, dependency graphs,
-        multi-tenant workspaces, the tree-view UI, GitHub integration. The planning brain
-        (<strong>prodect-ai</strong>) ships as a hosted service. Browsers only ever talk to prodect-core; the
-        AI layer is server-to-server. Same playbook GitLab, Sentry, Plane, and Mattermost use.
-      </p>
-    </ProductCard>
-  </div>
-
-  <Footer />
-</Layout>
+<!--
+  Auto-redirect: if the visitor's preferred language starts with "zh", send
+  them to /zh. Runs inline before any other JS so the redirect happens fast.
+  Only fires on / — /zh has its own script-free page.
+-->
+<script is:inline>
+  (function () {
+    try {
+      var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      if (lang.indexOf('zh') === 0) {
+        // Preserve hash if any so deep links still work.
+        var hash = window.location.hash || '';
+        window.location.replace('/zh' + hash);
+      }
+    } catch (_) {}
+  })();
+</script>

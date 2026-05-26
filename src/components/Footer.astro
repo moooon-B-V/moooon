@@ -1,43 +1,43 @@
 ---
 import BrandDoooo from './BrandDoooo.astro';
+import { t, type Lang } from '../i18n';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = 'en' } = Astro.props;
 const year = new Date().getFullYear();
+const homeHref = lang === 'zh' ? '/zh' : '/';
 ---
 
 <footer class="border-t border-[var(--color-line)]/10 mt-24">
   <div class="mx-auto max-w-6xl px-6 md:px-10 py-12 md:py-16 grid md:grid-cols-12 gap-8">
     <div class="md:col-span-5">
-      <p class="font-display text-[15px] tracking-[0.04em] font-semibold">MOOOON</p>
-      <p class="mt-2 text-[13px] text-[var(--color-muted)] max-w-md leading-[1.55]">
-        We build tools we wished existed and ship them when they're ready.
+      <p class="font-display text-[15px] tracking-[0.04em] font-semibold">
+        {t(lang, 'footerCopyright').replace('{year}', String(year))}
       </p>
     </div>
     <div class="md:col-span-3 text-[13px] space-y-2">
-      <p class="text-[var(--color-muted)] uppercase tracking-[0.14em] text-[11px] mb-3">Products</p>
-      <a href="/#doooo-app" class="block hover:text-[var(--color-brand)] transition-colors"><BrandDoooo /> App</a>
-      <a href="/#doooo-hub" class="block hover:text-[var(--color-brand)] transition-colors"><BrandDoooo /> Hub</a>
-      <a href="/#prodect" class="block hover:text-[var(--color-brand)] transition-colors">Prodect</a>
+      <p class="text-[var(--color-muted)] uppercase tracking-[0.14em] text-[11px] mb-3">{t(lang, 'footerColProducts')}</p>
+      <a href={`${homeHref}#doooo-app`} class="block hover:text-[var(--color-brand)] transition-colors"><BrandDoooo /> App</a>
+      <a href={`${homeHref}#doooo-hub`} class="block hover:text-[var(--color-brand)] transition-colors"><BrandDoooo /> Hub</a>
+      <a href={`${homeHref}#prodect`} class="block hover:text-[var(--color-brand)] transition-colors">Prodect</a>
     </div>
     <div class="md:col-span-2 text-[13px] space-y-2">
-      <p class="text-[var(--color-muted)] uppercase tracking-[0.14em] text-[11px] mb-3">Company</p>
-      <a href="mailto:info@moooon.net" class="block hover:text-[var(--color-brand)] transition-colors">Contact</a>
-      <a href="https://github.com/moooon-B-V" target="_blank" rel="noopener" class="block hover:text-[var(--color-brand)] transition-colors">GitHub</a>
+      <p class="text-[var(--color-muted)] uppercase tracking-[0.14em] text-[11px] mb-3">{t(lang, 'footerColCompany')}</p>
+      <a href="mailto:info@moooon.net" class="block hover:text-[var(--color-brand)] transition-colors">{t(lang, 'footerCompanyContact')}</a>
+      <a href="https://github.com/moooon-B-V" target="_blank" rel="noopener" class="block hover:text-[var(--color-brand)] transition-colors">{t(lang, 'footerCompanyGitHub')}</a>
     </div>
     <div class="md:col-span-2 text-[13px] space-y-2">
-      <p class="text-[var(--color-muted)] uppercase tracking-[0.14em] text-[11px] mb-3">Legal</p>
-      <a href="/privacy" class="block hover:text-[var(--color-brand)] transition-colors">Privacy</a>
+      <p class="text-[var(--color-muted)] uppercase tracking-[0.14em] text-[11px] mb-3">{t(lang, 'footerColLegal')}</p>
+      <a href="/privacy" class="block hover:text-[var(--color-brand)] transition-colors">{t(lang, 'footerLegalPrivacy')}</a>
       <a
         href="https://www.iubenda.com/privacy-policy/73390507/cookie-policy"
         class="iubenda-embed iubenda-nostyle no-brand block hover:text-[var(--color-brand)] transition-colors cursor-pointer"
         title="Cookie Policy"
-      >Cookies</a>
-      <a href="/terms" class="block hover:text-[var(--color-brand)] transition-colors">Terms</a>
-      <a href="/imprint" class="block hover:text-[var(--color-brand)] transition-colors">Imprint</a>
-    </div>
-  </div>
-  <div class="border-t border-[var(--color-line)]/10">
-    <div class="mx-auto max-w-6xl px-6 md:px-10 py-5 flex items-center justify-between text-[11px] text-[var(--color-muted)] uppercase tracking-[0.14em]">
-      <span>© {year} MOOOON</span>
-      <span>Built by the tool we're building</span>
+      >{t(lang, 'footerLegalCookies')}</a>
+      <a href="/terms" class="block hover:text-[var(--color-brand)] transition-colors">{t(lang, 'footerLegalTerms')}</a>
+      <a href="/imprint" class="block hover:text-[var(--color-brand)] transition-colors">{t(lang, 'footerLegalImprint')}</a>
     </div>
   </div>
 </footer>

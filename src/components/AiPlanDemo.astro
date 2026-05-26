@@ -1,5 +1,11 @@
 ---
 import BrandDoooo from './BrandDoooo.astro';
+import { t, type Lang } from '../i18n';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = 'en' } = Astro.props;
 ---
 
 <figure class="not-prose my-8">
@@ -23,7 +29,7 @@ import BrandDoooo from './BrandDoooo.astro';
       <!-- Header -->
       <div class="px-5 pb-3 border-b border-black/5 flex items-center gap-2">
         <span class="text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]"><BrandDoooo /></span>
-        <span class="ml-auto text-[10px] text-[var(--color-muted)]">AI Planner</span>
+        <span class="ml-auto text-[10px] text-[var(--color-muted)]">{t(lang, 'aiplanAppRole')}</span>
       </div>
 
       <!-- Animation stage -->
@@ -31,65 +37,65 @@ import BrandDoooo from './BrandDoooo.astro';
         <!-- Frame 1: Chat input typing -->
         <div class="absolute inset-0 demo-frame demo-frame-1 px-5 py-6 flex flex-col justify-end">
           <div class="text-[13px] text-[var(--color-muted)] mb-3 leading-relaxed">
-            Tell me what you want to do. I'll make a plan.
+            {t(lang, 'aiplanPrompt')}
           </div>
           <div class="rounded-2xl bg-[var(--color-paper-2)] border border-black/5 px-4 py-3 text-[14px] text-[var(--color-ink)] leading-[1.4]">
-            <span class="typing-text">Learn guitar in 6 weeks</span><span class="caret">|</span>
+            <span class="typing-text">{t(lang, 'aiplanTyping')}</span><span class="caret">|</span>
           </div>
         </div>
 
         <!-- Frame 2: Planner acknowledges the intent -->
         <div class="absolute inset-0 demo-frame demo-frame-2 px-5 py-6 flex flex-col justify-end">
           <div class="space-y-2 mb-3">
-            <div class="text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Planner</div>
+            <div class="text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)]">{t(lang, 'aiplanFrame2Kicker')}</div>
             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--color-brand)]/10 border border-[var(--color-brand)]/20 text-[12px] font-semibold text-[var(--color-brand)]">
               <span class="text-[10px]">●</span>
-              Got it — a 6-week learning plan.
+              {t(lang, 'aiplanFrame2Chip')}
             </div>
             <div class="text-[12px] text-[var(--color-muted)] leading-relaxed">
-              I'll stagger the practice, add a few video resources, and ramp up slowly.
+              {t(lang, 'aiplanFrame2Note')}
             </div>
           </div>
           <div class="rounded-2xl bg-[var(--color-paper-2)] border border-black/5 px-4 py-3 text-[14px] text-[var(--color-ink)]/70 leading-[1.4]">
-            Learn guitar in 6 weeks
+            {t(lang, 'aiplanTyping')}
           </div>
         </div>
 
         <!-- Frame 3: Generated plan -->
         <div class="absolute inset-0 demo-frame demo-frame-3 px-5 py-5 flex flex-col">
           <div class="text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)] mb-3">
-            Your 6-week plan · 18 tasks
+            {t(lang, 'aiplanFrame3Kicker')}
           </div>
           <div class="space-y-1.5 overflow-hidden">
             <div class="plan-row plan-row-1 flex items-center gap-2.5 px-3 py-2 rounded-lg bg-[var(--color-paper-2)] text-[12px]">
               <span class="text-[10px] text-[var(--color-brand)]">●</span>
-              <span class="font-semibold">Tune the guitar</span>
-              <span class="ml-auto text-[10px] text-[var(--color-muted)]">Mon · 15m</span>
+              <span class="font-semibold">{t(lang, 'aiplanRow1Title')}</span>
+              <span class="ml-auto text-[10px] text-[var(--color-muted)]">{t(lang, 'aiplanRow1Time')}</span>
             </div>
             <div class="plan-row plan-row-2 flex items-center gap-2.5 px-3 py-2 rounded-lg bg-[var(--color-paper-2)] text-[12px]">
               <span class="text-[10px] text-[var(--color-brand)]">●</span>
-              <span class="font-semibold">First chord: G major</span>
-              <span class="ml-auto text-[10px] text-[var(--color-muted)]">Tue · 30m</span>
+              <span class="font-semibold">{t(lang, 'aiplanRow2Title')}</span>
+              <span class="ml-auto text-[10px] text-[var(--color-muted)]">{t(lang, 'aiplanRow2Time')}</span>
             </div>
             <div class="plan-row plan-row-3 flex items-center gap-2.5 px-3 py-2 rounded-lg bg-[var(--color-paper-2)] text-[12px]">
               <span class="text-[10px] text-[var(--color-brand)]">●</span>
-              <span class="font-semibold">Rest day · listen to playlist</span>
-              <span class="ml-auto text-[10px] text-[var(--color-muted)]">Wed</span>
+              <span class="font-semibold">{t(lang, 'aiplanRow3Title')}</span>
+              <span class="ml-auto text-[10px] text-[var(--color-muted)]">{t(lang, 'aiplanRow3Time')}</span>
             </div>
             <div class="plan-row plan-row-4 flex items-center gap-2.5 px-3 py-2 rounded-lg bg-[var(--color-paper-2)] text-[12px]">
               <span class="text-[10px] text-[var(--color-brand)]">●</span>
-              <span class="font-semibold">Second chord: C major</span>
-              <span class="ml-auto text-[10px] text-[var(--color-muted)]">Thu · 30m</span>
+              <span class="font-semibold">{t(lang, 'aiplanRow4Title')}</span>
+              <span class="ml-auto text-[10px] text-[var(--color-muted)]">{t(lang, 'aiplanRow4Time')}</span>
             </div>
             <div class="plan-row plan-row-5 flex items-center gap-2.5 px-3 py-2 rounded-lg bg-[var(--color-paper-2)] text-[12px]">
               <span class="text-[10px] text-[var(--color-brand)]">●</span>
-              <span class="font-semibold">Switch between G ↔ C</span>
-              <span class="ml-auto text-[10px] text-[var(--color-muted)]">Sat · 45m</span>
+              <span class="font-semibold">{t(lang, 'aiplanRow5Title')}</span>
+              <span class="ml-auto text-[10px] text-[var(--color-muted)]">{t(lang, 'aiplanRow5Time')}</span>
             </div>
             <div class="plan-row plan-row-6 flex items-center gap-2.5 px-3 py-2 rounded-lg bg-[var(--color-paper-2)] text-[12px] text-[var(--color-muted)]">
               <span class="text-[10px]">●</span>
-              <span>Week 2 · D major + first song</span>
-              <span class="ml-auto text-[10px]">…</span>
+              <span>{t(lang, 'aiplanRow6Title')}</span>
+              <span class="ml-auto text-[10px]">{t(lang, 'aiplanRow6Time')}</span>
             </div>
           </div>
         </div>
@@ -97,8 +103,8 @@ import BrandDoooo from './BrandDoooo.astro';
     </div>
 
     <figcaption class="mt-5 text-center text-[12px] text-[var(--color-muted)] leading-[1.5]">
-      <span class="text-[var(--color-ink)] font-medium">Tell <BrandDoooo /> what you want.</span>
-      Learn a skill, train for a race, build a side project, plan an event, lock in a daily routine — it figures out what kind of plan you need and paces it like one.
+      <span class="text-[var(--color-ink)] font-medium">{t(lang, 'aiplanCaptionTellPre')}<BrandDoooo />{t(lang, 'aiplanCaptionTellPost')}</span>
+      {t(lang, 'aiplanCaptionAfter')}
     </figcaption>
   </div>
 
@@ -117,19 +123,21 @@ import BrandDoooo from './BrandDoooo.astro';
       33%, 100% { opacity: 0; transform: translateY(-8px); }
     }
 
-    /* Typewriter effect: width animates from 0 to 100% via inline-block + max-width */
+    /* Typewriter effect: width animates from 0 to natural width.
+       Uses max-width: 100em as a generous upper bound; the inline-block's
+       intrinsic content width clamps the visible result so this works for
+       any language without per-language tuning. */
     .typing-text {
       display: inline-block;
       overflow: hidden;
       white-space: nowrap;
       max-width: 0;
       vertical-align: bottom;
-      animation: type-it 12s steps(22, end) infinite;
+      animation: type-it 12s steps(28, end) infinite;
     }
     @keyframes type-it {
       0%   { max-width: 0; }
-      18%  { max-width: 20ch; }
-      33%, 100% { max-width: 20ch; }
+      18%, 33%, 100% { max-width: 100em; }
     }
     .caret {
       display: inline-block;

@@ -1,5 +1,6 @@
 ---
 import NotifyForm from './NotifyForm.astro';
+import { t, type Lang } from '../i18n';
 
 interface Props {
   product: 'doooo-app' | 'doooo-hub' | 'prodect';
@@ -7,9 +8,11 @@ interface Props {
   name: string;
   tagline: string;
   status?: string;
+  lang?: Lang;
 }
 
-const { product, index, name, tagline, status = 'Coming soon' } = Astro.props;
+const { product, index, name, tagline, status, lang = 'en' } = Astro.props;
+const statusLabel = status ?? t(lang, 'cardStatusComingSoon');
 ---
 
 <article id={product} class="group relative border-t border-[var(--color-line)]/15 py-16 md:py-24 first:border-t-0">
@@ -18,7 +21,7 @@ const { product, index, name, tagline, status = 'Coming soon' } = Astro.props;
       <p class="flex items-center gap-3 text-[12px] uppercase tracking-[0.18em] text-[var(--color-muted)]">
         <span class="font-mono">{index}</span>
         <span class="inline-block h-px w-6 bg-[var(--color-ink)]/30"></span>
-        <span>{status}</span>
+        <span>{statusLabel}</span>
       </p>
       <h3 class="font-display mt-5 text-[44px] md:text-[64px] leading-[1] tracking-[-0.02em] font-medium">
         <slot name="title">{name}</slot>
@@ -31,7 +34,7 @@ const { product, index, name, tagline, status = 'Coming soon' } = Astro.props;
       <div class="prose prose-neutral max-w-none text-[17px] md:text-[18px] leading-[1.65] text-[var(--color-ink)]/85 [&_strong]:text-[var(--color-ink)] [&_strong]:font-medium">
         <slot />
       </div>
-      <NotifyForm product={product} />
+      <NotifyForm product={product} lang={lang} />
     </div>
   </div>
 </article>
