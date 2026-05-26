@@ -294,9 +294,9 @@ export const dict = {
     hubName: 'Doooo Hub',
     hubTagline: '为本地与云端AI准备的桌面端。让一支AI团队在你自己的机器上工作。',
     hubPlatforms: 'macOS · Apple Silicon · MLX',
-    hubBody1Before: 'Doooo Hub不是一个助手，而是一整支',
+    hubBody1Before: 'Doooo Hub不只是一个助手，而是一整支',
     hubBody1A: '协同走完整个工作流的AI团队',
-    hubBody1After: '的桌面家园。可以直接采用Doooo内置的团队（Content Creator、Brand Designer、Product Designer、E-commerce Seller），也可以自己搭建——自定义代理、挑选工具、编写串连它们的工作流。做得足够好，就发布到市场上。',
+    hubBody1After: '的桌面端。可以直接采用Doooo内置的团队（内容创作、品牌设计、产品设计、电商运营），也可以搭建自己的团队、挑选工具、编写串连它们的工作流。',
     hubBody2: '在macOS上，Hub通过Apple的MLX框架运行本地模型——专为Apple Silicon的统一内存设计，让7B至70B参数的模型在MacBook上真正跑得起来，不必租用GPU。同时也支持云端LLM，但主打本地：你的代码、你的密钥、你的仓库、你的硬件。',
 
     // ===== App↔Hub integration demo =====
@@ -315,9 +315,9 @@ export const dict = {
     ahidTask2: '回复妈妈',
     ahidTask3: '采购食材',
     ahidAssignTo: '派发给 →',
-    ahidTeamLabel: 'Content Creator团队',
+    ahidTeamLabel: '内容创作团队',
     ahidSentToHub: '已发送至Hub',
-    ahidWorking: 'Content Creator团队 · 进行中',
+    ahidWorking: '内容创作团队 · 进行中',
     ahidProgressLabel: '资料调研中…',
     ahidNotifNow: '刚刚',
     ahidNotifTitle: '初稿已就绪',
@@ -326,8 +326,8 @@ export const dict = {
     ahidHubLabel: 'doooo-hub',
     ahidHubMeta: 'MLX · 本地',
     ahidHubGoalLabel: '目标',
-    ahidStatusIdle: 'Content Creator团队 · 待命',
-    ahidStatusActive: 'Content Creator团队 · 运行中',
+    ahidStatusIdle: '内容创作团队 · 待命',
+    ahidStatusActive: '内容创作团队 · 运行中',
     ahidAgent1: '调研员',
     ahidAgent2: '文案',
     ahidAgent3: '编辑',
@@ -367,7 +367,7 @@ export const dict = {
     aiplanCaptionAfter: '学习一项技能、为一场比赛训练、推进一个副业项目、策划一场活动、养成一项日常作息——它会判断你需要哪一种计划，并按那种节奏一一排出。',
 
     // ===== Team workflow demo (Doooo Hub) =====
-    twTitle: 'doooo-hub · Content Creator团队',
+    twTitle: 'doooo-hub · 内容创作团队',
     twMeta: 'MLX · M2 Max · 14B Qwen',
     twGoalKicker: '目标',
     twGoal: '在X、LinkedIn、Threads上发布一篇关于MLX加速效果的发布帖。',
