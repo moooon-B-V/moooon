@@ -18,8 +18,8 @@ async function forwardToResend(email: string, product: string): Promise<void> {
   const apiKey = env.RESEND_API_KEY;
   if (!apiKey) return;
 
-  // Doooo App + Doooo Hub signups share one "Doooo" topic.
-  // Prodect has its own. Topics live inside Resend's single default audience.
+  // Taq + Taq Hub signups share one topic. Prodect has its own.
+  // Topics live inside Resend's single default audience.
   const topicMap: Record<string, string | undefined> = {
     'doooo-app': env.RESEND_TOPIC_DOOOO,
     'doooo-hub': env.RESEND_TOPIC_DOOOO,

@@ -1,6 +1,6 @@
 # MOOOON
 
-The marketing site for [moooon.net](https://moooon.net) — three products: **Doooo App**, **Doooo Hub**, and **Prodect**.
+The marketing site for [moooon.net](https://moooon.net) — three products: **Taq**, **Taq Hub**, and **Prodect**.
 
 ## Stack
 
@@ -30,8 +30,8 @@ src/
 │   ├── Hero.astro
 │   ├── HowWeWork.astro          # meta-narrative + loop diagram
 │   ├── ProductCard.astro
-│   ├── DoooooGlyph.astro        # inline Doooo SVG mark
-│   ├── TeamWorkflowDiagram.astro    # inside the Doooo Hub card
+│   ├── DoooooGlyph.astro        # inline Taq SVG mark
+│   ├── TeamWorkflowDiagram.astro    # inside the Taq Hub card
 │   ├── ProdectWorkflowDiagram.astro # inside the Prodect card
 │   ├── NotifyForm.astro
 │   └── Footer.astro

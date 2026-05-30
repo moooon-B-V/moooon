@@ -2,9 +2,9 @@
 // Simplified Chinese (zh) mirrors the same keys. Components accept `lang` prop
 // and look up their strings by key.
 //
-// Brand proper nouns — MOOOON, Doooo, Prodect, Doooo App, Doooo Hub — stay in
-// their original English spelling in both locales. The BrandDoooo strikethrough
-// mark still renders identically.
+// Brand proper nouns — MOOOON, Taq, Prodect, Taq Hub — stay in their original
+// English spelling in both locales. The BrandDoooo component renders "Taq" with
+// the q in brand indigo.
 
 export type Lang = 'en' | 'zh';
 
@@ -12,11 +12,11 @@ export const dict = {
   en: {
     // ===== Layout / meta =====
     metaTitle: "MOOOON — three products, built by the tool we're building",
-    metaDescription: 'MOOOON builds Doooo App, Doooo Hub, and Prodect. We use the workflow Prodect codifies to build all three.',
+    metaDescription: 'MOOOON builds Taq, Taq Hub, and Prodect. We use the workflow Prodect codifies to build all three.',
 
     // ===== Nav =====
-    navDoooooApp: 'Doooo App',
-    navDoooooHub: 'Doooo Hub',
+    navDoooooApp: 'Taq',
+    navDoooooHub: 'Taq Hub',
     navProdect: 'Prodect',
     navContact: 'Contact',
     navContactAria: 'Contact',
@@ -29,17 +29,17 @@ export const dict = {
     heroSubLinkLabel: 'See how.',
     heroScrollLabel: 'Scroll',
 
-    // ===== Doooo umbrella =====
+    // ===== Taq umbrella =====
     doooooKicker: '01 ·',
     doooooHeadline: 'An app for your time. A desktop for your AI team.',
-    doooooIntro: 'Two apps under one brand. Doooo App is where your tasks, calendar, and groups live. Doooo Hub is where your AI agents work. They’re built to play well together — but each one stands on its own.',
+    doooooIntro: 'Two apps under one brand. Taq is where your tasks, calendar, and groups live. Taq Hub is where your AI agents work. They’re built to play well together — but each one stands on its own.',
 
-    // ===== Doooo App card =====
+    // ===== Taq card =====
     appIndex: '01a',
-    appName: 'Doooo App',
+    appName: 'Taq',
     appTagline: 'All-in-one time and task management. Tell it what you want; it makes the plan.',
     appPlatforms: 'iOS · Android · Web',
-    appBody1Before: 'Doooo App holds your ',
+    appBody1Before: 'Taq holds your ',
     appBody1A: 'to-do list',
     appBody1Mid: ', your ',
     appBody1B: 'calendar',
@@ -58,14 +58,14 @@ export const dict = {
     appBody3F: 'events & logistics',
     appBody3After: '. Each gets its own pacing, its own questions to clarify the brief, its own resource style — because how you learn guitar isn’t how you train for a marathon.',
 
-    // ===== Doooo Hub card =====
+    // ===== Taq Hub card =====
     hubIndex: '01b',
-    hubName: 'Doooo Hub',
+    hubName: 'Taq Hub',
     hubTagline: 'A desktop harness for local and remote AI. Run agent teams on your machine.',
     hubPlatforms: 'macOS · Apple Silicon · MLX',
-    hubBody1Before: 'Doooo Hub isn’t one assistant — it’s a desktop home for ',
+    hubBody1Before: 'Taq Hub isn’t one assistant — it’s a desktop home for ',
     hubBody1A: 'teams of agents that work together on a workflow',
-    hubBody1After: '. Start with a built-in team from Doooo (Content Creator, Brand Designer, Product Designer, E-commerce Seller) or build your own — design the agents, pick their tools, write the workflow that connects them. When it’s good, publish it to the marketplace.',
+    hubBody1After: '. Start with a built-in team from Taq (Content Creator, Brand Designer, Product Designer, E-commerce Seller) or build your own — design the agents, pick their tools, write the workflow that connects them. When it’s good, publish it to the marketplace.',
     hubBody2: 'On macOS, Hub runs local models through Apple’s MLX framework — the unified-memory, Apple-Silicon-native runtime that makes 7-70B-parameter models genuinely fast on a MacBook, no GPU rental required. Cloud LLMs work too. The headline is on-device: your code, your keys, your repo, your hardware.',
 
     // ===== App↔Hub integration demo =====
@@ -73,9 +73,9 @@ export const dict = {
     ahidHeadlineA: 'The app is the remote.',
     ahidHeadlineB: 'The desktop does the work.',
     ahidBodyBefore: '',
-    ahidBody: 'Doooo App can hand a task to a Doooo Hub team. Connect them once — like any other integration — then assign work from your phone, watch the agents run on your Mac, get the result back when they’re done.',
+    ahidBody: 'Taq can hand a task to a Taq Hub team. Connect them once — like any other integration — then assign work from your phone, watch the agents run on your Mac, get the result back when they’re done.',
     ahidBodyP1: '',
-    ahidBodyP2: ' App can hand a task to a ',
+    ahidBodyP2: ' can hand a task to a ',
     ahidBodyP3: ' Hub team. Connect them once — like any other integration — then assign work from your phone, watch the agents run on your Mac, get the result back when they’re done.',
     ahidCaption: 'Connect once — like any other integration — then assign from the app, watch Hub run it on your Mac.',
     ahidPhoneAppLabel: 'Tasks',
@@ -92,7 +92,7 @@ export const dict = {
     ahidNotifTitle: 'Draft is ready',
     ahidNotifBody: '280 chars · 1.2k article · scheduled to X, LinkedIn, Threads',
     ahidNotifCta: 'Review →',
-    ahidHubLabel: 'doooo-hub',
+    ahidHubLabel: 'taq-hub',
     ahidHubMeta: 'MLX · Local',
     ahidHubGoalLabel: 'Goal',
     ahidStatusIdle: 'Content Creator team · idle',
@@ -102,16 +102,16 @@ export const dict = {
     ahidAgent3: 'Editor',
     ahidAgent4: 'Social',
     ahidLog1Pre: 'Received from ',
-    ahidLog1Post: ' App',
-    ahidLog1: 'Received from Doooo App',
+    ahidLog1Post: '',
+    ahidLog1: 'Received from Taq',
     ahidLog2: 'Researcher · 5 sources pulled',
     ahidLog3: 'Copywriter · 280-char post drafted',
     ahidLog4: 'Editor · tone pass, fact-check passed',
     ahidLog5: 'Social · scheduled X 9a · LI 10a · Threads 11a · workflow done in 41s',
     ahidIntegrationLabel: 'integration',
 
-    // ===== AI Plan demo (Doooo App) =====
-    aiplanAppLabel: 'Doooo',
+    // ===== AI Plan demo (Taq) =====
+    aiplanAppLabel: 'Taq',
     aiplanAppRole: 'AI Planner',
     aiplanPrompt: 'Tell me what you want to do. I’ll make a plan.',
     aiplanTyping: 'Learn guitar in 6 weeks',
@@ -135,8 +135,8 @@ export const dict = {
     aiplanCaptionTellPost: ' what you want.',
     aiplanCaptionAfter: 'Learn a skill, train for a race, build a side project, plan an event, lock in a daily routine — it figures out what kind of plan you need and paces it like one.',
 
-    // ===== Team workflow demo (Doooo Hub) =====
-    twTitle: 'doooo-hub · Content Creator team',
+    // ===== Team workflow demo (Taq Hub) =====
+    twTitle: 'taq-hub · Content Creator team',
     twMeta: 'MLX · M2 Max · 14B Qwen',
     twGoalKicker: 'Goal',
     twGoal: 'Publish a launch post about MLX speedups across X, LinkedIn, Threads.',
@@ -243,11 +243,11 @@ export const dict = {
   zh: {
     // ===== Layout / meta =====
     metaTitle: 'MOOOON — 三款产品，都用我们正在打造的工具来打造',
-    metaDescription: 'MOOOON正在打造Doooo App、Doooo Hub与Prodect。三款产品，都用Prodect的工作流来打造。',
+    metaDescription: 'MOOOON正在打造Taq、Taq Hub与Prodect。三款产品，都用Prodect的工作流来打造。',
 
     // ===== Nav =====
-    navDoooooApp: 'Doooo App',
-    navDoooooHub: 'Doooo Hub',
+    navDoooooApp: 'Taq',
+    navDoooooHub: 'Taq Hub',
     navProdect: 'Prodect',
     navContact: '联系我们',
     navContactAria: '联系我们',
@@ -260,17 +260,17 @@ export const dict = {
     heroSubLinkLabel: '看看是怎么做的',
     heroScrollLabel: '向下滚动',
 
-    // ===== Doooo umbrella =====
+    // ===== Taq umbrella =====
     doooooKicker: '01 ·',
     doooooHeadline: '管理你的时间，承载你的AI团队。',
-    doooooIntro: '一个品牌，两款应用。Doooo App承载你的任务、日历与群组协作；Doooo Hub让你的AI代理在自己的桌面上运行。两者天生协同，独立使用也完全没问题。',
+    doooooIntro: '一个品牌，两款应用。Taq承载你的任务、日历与群组协作；Taq Hub让你的AI代理在自己的桌面上运行。两者天生协同，独立使用也完全没问题。',
 
-    // ===== Doooo App card =====
+    // ===== Taq card =====
     appIndex: '01a',
-    appName: 'Doooo App',
+    appName: 'Taq',
     appTagline: '时间与任务的一体化管理。说出你想做的事，它来安排计划。',
     appPlatforms: 'iOS · Android · Web',
-    appBody1Before: 'Doooo App承载你的',
+    appBody1Before: 'Taq承载你的',
     appBody1A: '待办清单',
     appBody1Mid: '、你的',
     appBody1B: '日历',
@@ -289,14 +289,14 @@ export const dict = {
     appBody3F: '活动与筹备',
     appBody3After: '。每一种都有自己的节奏、自己用来厘清需求的提问方式、自己的资源风格——毕竟，学吉他和备战马拉松完全是两回事。',
 
-    // ===== Doooo Hub card =====
+    // ===== Taq Hub card =====
     hubIndex: '01b',
-    hubName: 'Doooo Hub',
+    hubName: 'Taq Hub',
     hubTagline: '为本地与云端AI准备的桌面端。让一支AI团队在你自己的机器上工作。',
     hubPlatforms: 'macOS · Apple Silicon · MLX',
-    hubBody1Before: 'Doooo Hub不只是一个助手，而是一整支',
+    hubBody1Before: 'Taq Hub不只是一个助手，而是一整支',
     hubBody1A: '协同走完整个工作流的AI团队',
-    hubBody1After: '的桌面端。可以直接采用Doooo内置的团队（内容创作、品牌设计、产品设计、电商运营），也可以搭建自己的团队、挑选工具、编写串连它们的工作流。',
+    hubBody1After: '的桌面端。可以直接采用Taq内置的团队（内容创作、品牌设计、产品设计、电商运营），也可以搭建自己的团队、挑选工具、编写串连它们的工作流。',
     hubBody2: '在macOS上，Hub通过Apple的MLX框架运行本地模型——专为Apple Silicon的统一内存设计，让7B至70B参数的模型在MacBook上真正跑得起来，不必租用GPU。同时也支持云端LLM，但主打本地：你的代码、你的密钥、你的仓库、你的硬件。',
 
     // ===== App↔Hub integration demo =====
@@ -304,9 +304,9 @@ export const dict = {
     ahidHeadlineA: 'App是遥控器，',
     ahidHeadlineB: '桌面端在工作。',
     ahidBodyBefore: '',
-    ahidBody: 'Doooo App可以把任务交给Doooo Hub的一支团队。连接一次——与任何集成一样——之后便可从手机派发任务，代理在Mac上运行，结果回到App里。',
+    ahidBody: 'Taq可以把任务交给Taq Hub的一支团队。连接一次——与任何集成一样——之后便可从手机派发任务，代理在Mac上运行，结果回到App里。',
     ahidBodyP1: '',
-    ahidBodyP2: ' App可以把任务交给',
+    ahidBodyP2: '可以把任务交给',
     ahidBodyP3: ' Hub的一支团队。连接一次——与任何集成一样——之后便可从手机派发任务，代理在Mac上运行，结果回到App里。',
     ahidCaption: '连接一次——与任何集成一样——便可从App派发任务，让Hub在你的Mac上完成。',
     ahidPhoneAppLabel: '任务',
@@ -323,7 +323,7 @@ export const dict = {
     ahidNotifTitle: '初稿已就绪',
     ahidNotifBody: '280字短文 · 1200字长文 · 已排程至X、LinkedIn、Threads',
     ahidNotifCta: '查看 →',
-    ahidHubLabel: 'doooo-hub',
+    ahidHubLabel: 'taq-hub',
     ahidHubMeta: 'MLX · 本地',
     ahidHubGoalLabel: '目标',
     ahidStatusIdle: '内容创作团队 · 待命',
@@ -333,16 +333,16 @@ export const dict = {
     ahidAgent3: '编辑',
     ahidAgent4: '社媒',
     ahidLog1Pre: '收到来自',
-    ahidLog1Post: ' App的任务',
-    ahidLog1: '收到来自Doooo App的任务',
+    ahidLog1Post: '的任务',
+    ahidLog1: '收到来自Taq的任务',
     ahidLog2: '调研员 · 整理出5份MLX基准测试资料',
     ahidLog3: '文案 · 280字短文初稿完成',
     ahidLog4: '编辑 · 语气校对完毕，事实核查通过',
     ahidLog5: '社媒 · 已排程至X上午9点、LI 10点、Threads 11点 · 工作流完成，用时41秒',
     ahidIntegrationLabel: '集成',
 
-    // ===== AI Plan demo (Doooo App) =====
-    aiplanAppLabel: 'Doooo',
+    // ===== AI Plan demo (Taq) =====
+    aiplanAppLabel: 'Taq',
     aiplanAppRole: 'AI规划助手',
     aiplanPrompt: '告诉我你想做什么，我来制定计划。',
     aiplanTyping: '六周学会吉他',
@@ -366,8 +366,8 @@ export const dict = {
     aiplanCaptionTellPost: '你想做什么。',
     aiplanCaptionAfter: '学习一项技能、为一场比赛训练、推进一个副业项目、策划一场活动、养成一项日常作息——它会判断你需要哪一种计划，并按那种节奏一一排出。',
 
-    // ===== Team workflow demo (Doooo Hub) =====
-    twTitle: 'doooo-hub · 内容创作团队',
+    // ===== Team workflow demo (Taq Hub) =====
+    twTitle: 'taq-hub · 内容创作团队',
     twMeta: 'MLX · M2 Max · 14B Qwen',
     twGoalKicker: '目标',
     twGoal: '在X、LinkedIn、Threads上发布一篇关于MLX加速效果的发布帖。',

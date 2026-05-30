@@ -35,11 +35,11 @@ const isZh = lang === 'zh';
     <p class="mt-5 max-w-2xl text-[17px] md:text-[18px] text-[var(--color-muted)] leading-[1.55]">
       {isZh ? (
         <>
-          一个品牌，两款应用。<BrandDoooo /> App承载你的任务、日历与群组协作；<BrandDoooo /> Hub让你的AI代理在自己的桌面上运行。两者天生协同，独立使用也完全没问题。
+          一个品牌，两款应用。<BrandDoooo />承载你的任务、日历与群组协作；<BrandDoooo /> Hub让你的AI代理在自己的桌面上运行。两者天生协同，独立使用也完全没问题。
         </>
       ) : (
         <>
-          Two apps under one brand. <BrandDoooo /> App is where your tasks, calendar, and groups live.
+          Two apps under one brand. <BrandDoooo /> is where your tasks, calendar, and groups live.
           <BrandDoooo /> Hub is where your AI agents work. They're built to play well together — but each one
           stands on its own.
         </>
@@ -48,7 +48,7 @@ const isZh = lang === 'zh';
   </section>
 
   <div class="mx-auto max-w-6xl px-6 md:px-10">
-    <!-- Doooo App -->
+    <!-- Taq -->
     <ProductCard
       product="doooo-app"
       index={t(lang, 'appIndex')}
@@ -56,7 +56,7 @@ const isZh = lang === 'zh';
       tagline={t(lang, 'appTagline')}
       lang={lang}
     >
-      <Fragment slot="title"><BrandDoooo /> App</Fragment>
+      <Fragment slot="title"><BrandDoooo /></Fragment>
       <div class="flex items-center gap-3 mb-6 -mt-2">
         <span class="text-[11px] uppercase tracking-[0.18em] text-[var(--color-muted)]">{t(lang, 'appPlatforms')}</span>
       </div>
@@ -64,7 +64,7 @@ const isZh = lang === 'zh';
       {isZh ? (
         <>
           <p>
-            <BrandDoooo /> App承载你的<span class="font-pop">待办清单</span>、你的<span class="font-pop">日历</span>，以及你所在每一个<span class="font-pop">群组</span>的共享清单与日历——家人、团队、与朋友一同筹划的旅行。所有与时间相关的事，都在同一处。
+            <BrandDoooo />承载你的<span class="font-pop">待办清单</span>、你的<span class="font-pop">日历</span>，以及你所在每一个<span class="font-pop">群组</span>的共享清单与日历——家人、团队、与朋友一同筹划的旅行。所有与时间相关的事，都在同一处。
           </p>
           <p>
             真正出彩的是内置的<span class="font-pop">AI规划助手</span>。告诉它「六周学会吉他」「为10公里赛跑训练」「这一季度上线我的副业项目」「为妹妹策划一场生日聚会」——它会判断你需要的是哪一种计划，并在你的日历上排出真实、有节奏的任务，而不是给你一篇大而空的建议。
@@ -79,7 +79,7 @@ const isZh = lang === 'zh';
       ) : (
         <>
           <p>
-            <BrandDoooo /> App holds your <span class="font-pop">to-do list</span>, your <span class="font-pop">calendar</span>, and the
+            <BrandDoooo /> holds your <span class="font-pop">to-do list</span>, your <span class="font-pop">calendar</span>, and the
             shared lists and calendars of every <span class="font-pop">group</span> you're in — your family, your team, your
             friends planning a trip. One surface for everything time-shaped.
           </p>
@@ -105,7 +105,7 @@ const isZh = lang === 'zh';
     <!-- App ↔ Hub integration bridge -->
     <AppHubIntegrationDemo lang={lang} />
 
-    <!-- Doooo Hub -->
+    <!-- Taq Hub -->
     <ProductCard
       product="doooo-hub"
       index={t(lang, 'hubIndex')}

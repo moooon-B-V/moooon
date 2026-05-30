@@ -1,39 +1,33 @@
 ---
 interface Props {
-  /** Text containing the word "Doooo". Every "Doooo" occurrence is replaced with the styled mark. */
+  /** Text containing the word "Taq". Every "Taq" occurrence is replaced with the styled mark. */
   text?: string;
   /** Optional wrapper class. */
   class?: string;
-  /** Color the strikethrough in the brand indigo. Default true. */
+  /** Color the accent letter in brand indigo. Default true. */
   colored?: boolean;
 }
 
 const { text, class: className = '', colored = true } = Astro.props;
 
-const strikeColorClass = colored ? 'text-[var(--color-brand)]' : '';
+const accentColorClass = colored ? 'text-[var(--color-brand)]' : '';
 
-// Split the text on "Doooo"; between every pair of parts we'll render the styled mark.
-const parts = text === undefined ? null : text.split('Doooo');
+const parts = text === undefined ? null : text.split('Taq');
 ---
 
 <!--
-  Visual mark for "Doooo": four o's where the last three carry a horizontal
-  strikethrough through their centerline. Ported from dooooHub's BrandName.tsx.
+  Visual mark for "Taq": the whole word is rendered in the brand accent color.
 -->
 
 {parts === null ? (
-  <span class:list={['normal-case', className]}>
-    D<span>o</span><span class="relative inline-block">o<span class:list={['absolute left-[20%] top-[54%] w-[60%] border-t-[0.1em] border-current', strikeColorClass]} aria-hidden="true" /></span><span class="relative inline-block">o<span class:list={['absolute left-[20%] top-[54%] w-[60%] border-t-[0.1em] border-current', strikeColorClass]} aria-hidden="true" /></span><span class="relative inline-block">o<span class:list={['absolute left-[20%] top-[54%] w-[60%] border-t-[0.1em] border-current', strikeColorClass]} aria-hidden="true" /></span>
-  </span>
+  <span class:list={['normal-case', accentColorClass, className]}>Taq</span>
 ) : (
   <span class={className}>
     {parts.map((part, i) => (
       <>
         {part}
         {i < parts.length - 1 && (
-          <span class="normal-case">
-            D<span>o</span><span class="relative inline-block">o<span class:list={['absolute left-[20%] top-[54%] w-[60%] border-t-[0.1em] border-current', strikeColorClass]} aria-hidden="true" /></span><span class="relative inline-block">o<span class:list={['absolute left-[20%] top-[54%] w-[60%] border-t-[0.1em] border-current', strikeColorClass]} aria-hidden="true" /></span><span class="relative inline-block">o<span class:list={['absolute left-[20%] top-[54%] w-[60%] border-t-[0.1em] border-current', strikeColorClass]} aria-hidden="true" /></span>
-          </span>
+          <span class:list={['normal-case', accentColorClass]}>Taq</span>
         )}
       </>
     ))}
